@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geely × Watad — Content Dashboard 2026</title>
+<title>SOUEAST × Watad — Dammam Showroom Content</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -174,7 +174,7 @@ body::before {
 .phase-tab[data-phase="1"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
 .phase-tab[data-phase="2"].active { border-color: #FF5B04; background: rgba(255,91,4,0.15); color: #fff; }
 .phase-tab[data-phase="3"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
-.phase-tab[data-phase="4c"].active { border-color: #FF5B04; background: rgba(255,91,4,0.15); color: #fff; }
+.phase-tab[data-phase="4"].active { border-color: #FF5B04; background: rgba(255,91,4,0.15); color: #fff; }
 .phase-tab[data-phase="4e"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
 
 /* MAIN */
@@ -853,6 +853,7 @@ main {
 .plt-tiktok { background: rgba(105,201,208,0.15); color: var(--tiktok); }
 .plt-yt { background: rgba(255,0,0,0.15); color: #ff8080; }
 .plt-google { background: rgba(66,133,244,0.15); color: #7fa3ff; }
+.plt-snap { background: rgba(255,252,0,0.12); color: #FFFC00; }
 .plt-all { background: rgba(255,255,255,0.08); color: var(--text2); }
 
 /* RESPONSIVE */
@@ -870,8 +871,8 @@ main {
 <!-- NAV -->
 <nav class="topnav">
   <div class="nav-logo">
-    <span class="nav-logo-badge">WATAD</span>
-    <span class="nav-title">Geely Content Plan 2026</span>
+    <span class="nav-logo-badge">WATAD</span><span style="font-size:11px;font-weight:800;letter-spacing:4px;color:#fff;border:1px solid rgba(255,255,255,.35);padding:3px 10px;border-radius:2px">SOUEAST</span>
+    <span class="nav-title">SOUEAST Dammam Showroom — Content Plan</span>
   </div>
   <div class="nav-meta" id="save-status">ready</div>
   <div class="nav-actions">
@@ -889,13 +890,10 @@ main {
     <span class="phase-dot" style="background:var(--phase2)"></span> Phase 2 — Teaser
   </button>
   <button class="phase-tab" data-phase="3" onclick="switchPhase('3', this)">
-    <span class="phase-dot" style="background:var(--phase3)"></span> Phase 3 — Pre-Order
+    <span class="phase-dot" style="background:var(--phase3)"></span> Phase 3 — Grand Opening
   </button>
-  <button class="phase-tab" data-phase="4c" onclick="switchPhase('4c', this)">
-    <span class="phase-dot" style="background:var(--phase4c)"></span> Phase 4 — Coolray
-  </button>
-  <button class="phase-tab" data-phase="4e" onclick="switchPhase('4e', this)">
-    <span class="phase-dot" style="background:var(--phase4e)"></span> Phase 4 — Emgrand
+  <button class="phase-tab" data-phase="4" onclick="switchPhase('4', this)">
+    <span class="phase-dot" style="background:var(--phase4c)"></span> Phase 4 — Post-Opening
   </button>
 </div>
 
@@ -911,11 +909,10 @@ main {
     <div class="form-group">
       <label class="form-label">PHASE</label>
       <select class="form-select" id="add-phase">
-        <option value="1">Phase 1 — Brand Awareness</option>
-        <option value="2">Phase 2 — Teaser</option>
-        <option value="3">Phase 3 — Pre-Order</option>
-        <option value="4c">Phase 4 — Coolray</option>
-        <option value="4e">Phase 4 — Emgrand</option>
+        <option value="1">Phase 1 — Awareness</option>
+        <option value="2">Phase 2 — Teaser / Countdown</option>
+        <option value="3">Phase 3 — Grand Opening</option>
+        <option value="4">Phase 4 — Post-Opening</option>
       </select>
     </div>
     <div class="form-row">
@@ -923,9 +920,8 @@ main {
         <label class="form-label">المنصة</label>
         <select class="form-select" id="add-platform">
           <option>Meta</option>
+          <option>Snapchat</option>
           <option>TikTok</option>
-          <option>YouTube</option>
-          <option>Google</option>
           <option>All Platforms</option>
         </select>
       </div>
@@ -949,7 +945,7 @@ main {
     </div>
     <div class="form-group">
       <label class="form-label">التاق / المنصة المستهدفة</label>
-      <input class="form-input" id="add-tag" placeholder="Meta Reels + TikTok — 15s" />
+      <input class="form-input" id="add-tag" placeholder="Snapchat + Meta Reels — 10s" />
     </div>
     <div class="form-group">
       <label class="form-label">لينك أو فيديو (اختياري)</label>
@@ -970,58 +966,48 @@ main {
 <script>
 // ─── DATA ───────────────────────────────────────────────────────────────────
 const phaseConfig = {
-  '1':  { name:'Phase 1 — Brand Awareness', sub:'بناء الوعي بالبراند قبل الكشف عن أي موديل', period:'May W1 – Jun W4', budget:'$10,000', obj:'Awareness — CPM', color:'#3d6bff', kpis:[{l:'Reach',v:'1.65M'},{l:'Impressions',v:'5.67M'},{l:'Clicks',v:'83.7K'},{l:'CPM',v:'~$1.76'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$7,000'},{p:'YouTube',pct:10,color:'#FF0000',val:'$1,000'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$2,000'}] },
-  '2':  { name:'Phase 2 — Teaser', sub:'إثارة الفضول وبناء الترقب — كشف جزئي تدريجي', period:'May W2 – May W3', budget:'$4,000', obj:'Teaser — CPM', color:'#7c4dff', kpis:[{l:'Reach',v:'660K'},{l:'Impressions',v:'2.27M'},{l:'Clicks',v:'33.5K'},{l:'Duration',v:'2 Weeks'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$2,800'},{p:'YouTube',pct:10,color:'#FF0000',val:'$400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
-  '3':  { name:'Phase 3 — Pre-Order', sub:'تحويل الاهتمام إلى إجراء — جمع Leads وحجز مسبق', period:'May W3 – May W4', budget:'$4,000', obj:'Conversion — CPC', color:'#f5a623', kpis:[{l:'Reach',v:'49.7K'},{l:'Clicks',v:'10.7K'},{l:'Leads',v:'360'},{l:'CPL',v:'$11.1'}], budgets:[{p:'Google',pct:10,color:'#4285F4',val:'$400'},{p:'Meta',pct:70,color:'#1877F2',val:'$2,800'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
-  '4c': { name:'Phase 4 — Coolray Launch', sub:'إطلاق وتثبيت Coolray — ثلاث طبقات متكاملة', period:'Jun W1 – Aug W4', budget:'$15,000', obj:'Launch & Sustain — 12 Weeks', color:'#00e5a0', kpis:[{l:'Reach',v:'2.79M'},{l:'Impressions',v:'9.97M'},{l:'Leads',v:'2,057'},{l:'CPL',v:'~$4.6'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$10,500'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$3,000'},{p:'Google',pct:7,color:'#4285F4',val:'$1,050'},{p:'YouTube',pct:3,color:'#FF0000',val:'$450'}] },
-  '4e': { name:'Phase 4 — Emgrand Launch', sub:'إطلاق وتثبيت Emgrand — محتوى يناسب شخصيته الـ Premium', period:'Jun W1 – Aug W4', budget:'$15,000', obj:'Launch & Sustain — 12 Weeks', color:'#ff4d6a', kpis:[{l:'Reach',v:'2.79M'},{l:'Impressions',v:'9.97M'},{l:'Leads',v:'2,057'},{l:'CPL',v:'~$4.6'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$10,500'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$3,000'},{p:'Google',pct:7,color:'#4285F4',val:'$1,050'},{p:'YouTube',pct:3,color:'#FF0000',val:'$450'}] },
+  '1': { name:'Phase 1 — Awareness (Pre-Opening)', sub:'تعريف أهل الدمام بـ SOUEAST قبل افتتاح المعرض — البراند، S06 و S09، و"قريباً في الدمام"', period:'Oct W3 – Oct W4 (TBC)', budget:'$7,000', obj:'Awareness — CPM', color:'#079598', kpis:[{l:'Impressions',v:'~1.0M'},{l:'Reach',v:'~330K'},{l:'Blended CPM',v:'~$7'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'$2,450'},{p:'Meta',pct:40,color:'#1877F2',val:'$2,800'},{p:'TikTok',pct:25,color:'#69c9d0',val:'$1,750'}] },
+  '2': { name:'Phase 2 — Teaser / Countdown', sub:'عدّ تنازلي للافتتاح — كشف تدريجي للمعرض ودعوة لحفل الافتتاح', period:'Oct W5 – Nov W1 (TBC)', budget:'$5,000', obj:'Awareness — CPM + Video Views', color:'#FF5B04', kpis:[{l:'Impressions',v:'~715K'},{l:'Reach',v:'~240K'},{l:'Blended CPM',v:'~$7'},{l:'Duration',v:'1 Week'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,750'},{p:'Meta',pct:40,color:'#1877F2',val:'$2,000'},{p:'TikTok',pct:25,color:'#69c9d0',val:'$1,250'}] },
+  '3': { name:'Phase 3 — Grand Opening', sub:'أسبوع الافتتاح — زيارة المعرض + حجز Test Drive', period:'Opening Week (TBC)', budget:'$4,000', obj:'Visit Location + Test Drive', color:'#079598', kpis:[{l:'CTA 1',v:'Test Drive'},{l:'CTA 2',v:'Visit'},{l:'CPL target',v:'$8–15'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'$1,800'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
+  '4': { name:'Phase 4 — Post-Opening (Test Drive)', sub:'بعد الافتتاح — استمرار جمع طلبات Test Drive و Retargeting لكل من تفاعل', period:'Nov W2 – Nov W4 (TBC)', budget:'$4,000', obj:'Leads — Test Drive', color:'#FF5B04', kpis:[{l:'CTA',v:'Test Drive'},{l:'CPL target',v:'$8–15'},{l:'Lead Form',v:'Native'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'$1,800'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
 };
 
-const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
+const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','Snapchat':'plt-snap','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
 
+const R = {
+  lights:{url:'https://www.zawya.com/en/press-release/companies-news/soueast-lights-up-the-middle-east-iconic-landmarks-agljfugp', note:'رفرنس من SOUEAST نفسها: حملة "EASE YOUR LIFE" — إضاءة معالم بالشرق الأوسط بلون البراند. الفكرة: نسويها محلياً — إضاءة واجهة المعرض/معلم بالدمام + تصوير ليلي.'},
+  launch:{url:'https://www.automotiveworld.com/news-releases/soueast-launches-s06-s07-s09-in-saudi-arabia-accelerating-expansion-in-the-middle-east/', note:'خبر إطلاق S06 / S07 / S09 بالسعودية — نسحب منه رسائل البراند الرسمية للمحتوى.'},
+  s06black:{url:'https://www.youtube.com/watch?v=GK79a2s9arc', note:'S06 Black Edition — رفرنس للّوك السينمائي والزوايا القريبة. مناسب للـ Reels والـ Snap.'},
+  s09family:{url:'https://www.youtube.com/watch?v=4uIZbSNiRYo', note:'S09 كـ SUV عائلي فاخر — رفرنس لزاوية العائلة (7 مقاعد) اللي تناسب جمهور الشرقية.'},
+  haraj:{url:'https://www.adsoftheworld.com/campaigns/ce49d322-a19b-4640-a41a-26f19ec60acd', note:'حراج — "خذها من اللي يفهمك": رفرنس سعودي للنبرة المحلية واللهجة والتيزر قبل الحملة.'},
+  jetour:{url:'https://www.sayarabay.com/car-news/jetour-strengthens-saudi-presence-with-al-khobar-dealership-launch', note:'منافس: Jetour افتتح معرض بالخبر — نراقب شلون أعلنوا عن الافتتاح بنفس المنطقة.'},
+  porsche:{url:'https://newsroom.porsche.com/en_PME/2025/company/porsche-khobar-new-showroom.html', note:'افتتاح معرض Porsche بالخبر — رفرنس لتصوير المعرض نفسه كتجربة (Showroom as destination).'},
+  omoda:{url:'https://saudiauto.com.sa/en/auto-run-omuda-jayco-showroom/', note:'افتتاح معرض Omoda & Jaecoo — رفرنس صيني منافس لافتتاح معرض بالسعودية.'},
+  exp:{url:'https://www.sixteen-nine.net/?p=39540', note:'وكيل سعودي سوّى شاشات وتجربة تفاعلية بالمعرض — أفكار لمحتوى "شوف المعرض من جوّا".'},
+};
 let data = {
   '1': [
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Image / Carousel / Short Video', desc:'محتوى بصري راقي يعرّف بهوية Geely — جودة الصناعة، التصميم، القيم', tag:'Meta IG/FB — 30s', media:[] },
-    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Skippable In-stream Ads', desc:'فيديو براند 30 ثانية يحكي قصة Geely بدون ذكر موديل محدد', tag:'YouTube — Brand Film', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Short Video 15–20s', desc:'محتوى يجذب الجمهور الشاب — أسلوب حياة + تصميم السيارات', tag:'TikTok — In-Feed', media:[] },
-    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Brand Film — "Made for your world"', desc:'فيديو براند يحكي قصة Geely من الصين للعالم بدون عرض موديل محدد', tag:'Meta + YouTube — 30s', media:[] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — تفاصيل التصميم', desc:'صور عالية الجودة لتفاصيل Geely — كل صورة تعرض تفصيلة مختلفة', tag:'Meta IG/FB', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Trend-Based — Before vs After', desc:'فيديو "Before vs After" يعرض مشهد حياة يومي مع سيارة Geely', tag:'TikTok — 15s', media:[] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Snap Ads 6–10s — "SOUEAST قريباً في الدمام"', desc:'لقطات سريعة لـ S06 و S09 + لوكيشن الدمام + نهاية بـ "قريباً". فيرتكال، أول 2 ثانية فيها السيارة.', tag:'Snapchat — Snap Ads 9:16', media:[R.s06black, R.launch] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Reels 15s — تعريف بالبراند', desc:'مين هي SOUEAST؟ تصميم، تقنية، ضمان — بدون أسعار. يبني الثقة ببراند جديد على السوق.', tag:'Meta IG/FB — Reels 15s', media:[R.launch, R.s06black] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'In-Feed 15–20s — S09 للعائلة', desc:'S09 كسيارة العائلة بالشرقية: 7 مقاعد، مساحة، رحلة الويكند للخبر/البحر. أسلوب Organic.', tag:'TikTok — In-Feed', media:[R.s09family] },
+    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Night Shoot — إضاءة بلون SOUEAST', desc:'تصوير ليلي لواجهة المعرض أو معلم بالدمام مضاء بلون البراند — نفس فكرة "EASE YOUR LIFE" لكن محلياً.', tag:'Meta + Snap + TikTok — 10–15s', media:[R.lights] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — S06 vs S09 "أيهم يناسبك؟"', desc:'كاروسيل يعرض الموديلين: S06 للشباب/المدينة، S09 للعائلة. يجيب engagement بالكومنتات.', tag:'Meta IG/FB — Carousel', media:[R.s06black, R.s09family] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Local Tone — لهجة شرقاوية', desc:'سكربت قصير بلهجة المنطقة الشرقية — نبرة قريبة من الناس مثل رفرنس حراج.', tag:'Snapchat + TikTok — 10s', media:[R.haraj] },
   ],
   '2': [
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Teaser Video 10–15s — Partial Reveal', desc:'كشف جزئي للسيارة — ظلال، تفاصيل مصابيح، سطح السيارة — بدون عرض الشكل الكامل', tag:'Meta IG/FB — Teaser', media:[] },
-    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Teaser In-stream 20s — Logo Reveal', desc:'ينتهي الفيديو بظهور شعار Geely فقط — يبني التشويق بدون كشف', tag:'YouTube — Logo Only', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Sound-Led Reveal', desc:'صوت المحرك أو الباب + مشهد درامي — يخلق فضول بالصوت قبل الصورة', tag:'TikTok — Sound Teaser', media:[] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Countdown Story — "Something is coming"', desc:'عداد أيام يتراجع حتى يوم الإطلاق — يُحدَّث يومياً', tag:'Meta Stories — Daily Update', media:[] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Close-up Carousel — "أي سيارة هذه؟"', desc:'Close-up لتفاصيل السيارة — يخلق engagement ويبني anticipation', tag:'Meta IG — Engagement', media:[] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Countdown — "باقي X أيام"', desc:'ستوري/سناب يومي يعد للافتتاح — كل يوم تفصيلة جديدة من المعرض.', tag:'Snapchat — Daily', media:[] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Partial Reveal — المعرض من وراء الستار', desc:'لقطات قريبة للمعرض والسيارات مغطاة — كشف تدريجي.', tag:'Meta Reels + Stories', media:[R.exp] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Invite — "انت معزوم على الافتتاح"', desc:'دعوة مفتوحة لحفل الافتتاح: التاريخ، اللوكيشن، وش بيكون موجود.', tag:'TikTok — In-Feed', media:[] },
   ],
   '3': [
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'In-App Lead + Website Lead (A/B)', desc:'نموذج داخل Meta للحجز المسبق + Landing Page — A/B بين الاثنين', tag:'Meta — CPC $0.35–$0.5 — 244 Leads', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Direct Lead + Website Lead (A/B)', desc:'نموذج TikTok Lead Gen + Website — CTA "احجز الآن قبل الإطلاق"', tag:'TikTok — CPC $0.15–$0.4', media:[] },
-    { id:uid(), platform:'Google', layer:'Conversion', type:'Search Campaign — Pre-Order Intent', desc:'كلمات مفتاحية تستهدف من يبحث عن Geely أو سيارات جديدة', tag:'Google Search — 16 Leads', media:[] },
-    { id:uid(), platform:'All Platforms', layer:'Conversion', type:'Full Reveal Video + CTA "احجز أول واحد"', desc:'أول ظهور كامل للموديل مع عرض المميزات الرئيسية', tag:'Meta + TikTok — Launch Reveal', media:[] },
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Urgency Creative — "المقاعد محدودة"', desc:'عداد + CTA مباشر — يخلق urgency للتسجيل الآن — يستهدف الـ Warm Audience', tag:'Meta Stories — Retargeting', media:[] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Store Traffic — "زورنا اليوم"', desc:'إعلان بلوكيشن المعرض + Get Directions — يستهدف نطاق الدمام.', tag:'Meta — Visit Location', media:[R.porsche] },
+    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'Lead Form — احجز Test Drive', desc:'فورم Native: الاسم، الجوال، الموديل (S06/S09)، الوقت المناسب.', tag:'Snapchat — Lead Gen', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Live Coverage — يوم الافتتاح', desc:'تغطية سريعة من الحفل + ناس تجرب السيارات — تتحول لإعلان Spark Ads.', tag:'TikTok — Spark Ads', media:[R.omoda] },
   ],
-  '4c': [
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Image / Carousel / Short Video (20s features)', desc:'محتوى بصري يعرض مميزات Coolray — أسلوب شبابي وديناميكي', tag:'Meta IG/FB — Awareness CPM', media:[] },
-    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Skippable In-stream (30s brand film)', desc:'Brand Film يعرض Coolray في بيئات متنوعة — شباب، مدينة، مغامرة', tag:'YouTube — Awareness', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Lifestyle Short Video (15-20s organic)', desc:'محتوى يشبه الـ Organic — "أول أسبوع مع Coolray"', tag:'TikTok — In-Feed', media:[] },
-    { id:uid(), platform:'Meta', layer:'Consideration', type:'Feature Deep-Dive — سلسلة 3 فيديوهات', desc:'كل فيديو يشرح مميزة واحدة بتفصيل — Safety, Tech, Design', tag:'Meta Lead Form — In-App', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Consideration', type:'Comparison — "ليش Coolray؟"', desc:'مقارنة Coolray بالفئة بأسلوب data-driven وجذاب', tag:'TikTok + Meta — CPC', media:[] },
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "Test Drive متاح الحين"', desc:'يستهدف زوار الموقع الذين لم يكملوا — Urgency Strong CTA', tag:'Meta Retargeting — A/B v1', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Urgency CTA (A/B v1)', desc:'Limited offer أو لون محدود — "فقط 50 سيارة بهذا اللون"', tag:'TikTok — Direct Lead', media:[] },
-    { id:uid(), platform:'Google', layer:'Conversion', type:'Search — Purchase Intent / Test Drive', desc:'"جرب Coolray مجاناً" → Lead Form مباشر — يستهدف الـ High Intent', tag:'Google Search — CPC $1.5', media:[] },
+  '4': [
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "لسه ما جربتها؟"', desc:'لكل من شاف فيديوهات الافتتاح أو تفاعل — CTA مباشر Test Drive.', tag:'Meta — Retargeting Lead Form', media:[] },
+    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'UGC — تجارب العملاء بالمعرض', desc:'عملاء حقيقيين بعد الـ Test Drive — رأيهم بجملة وحدة.', tag:'Snapchat + TikTok — 10–15s', media:[R.jetour] },
   ],
-  '4e': [
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Brand Film — Executive Lifestyle 30s', desc:'أسلوب أكثر رسمية وراقي — يستهدف رجل الأعمال وعائلة الـ Mid-size Sedan', tag:'Meta + YouTube — Awareness', media:[] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Interior Showcase Carousel', desc:'الداخلية الفاخرة، شاشات التقنية، المقاعد الجلدية — بصور احترافية عالية الجودة', tag:'Meta IG/FB — CPM', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'"Executive Lifestyle" — TikTok', desc:'فيديو يصور شخص ناجح يصل بـ Emgrand لاجتماع أو مناسبة', tag:'TikTok — 15-20s', media:[] },
-    { id:uid(), platform:'Meta', layer:'Consideration', type:'Emgrand vs Category — Specs Comparison', desc:'مقارنة بصرية: محرك، وقود، أمان — "ليش Emgrand؟"', tag:'Meta + TikTok — CPC', media:[] },
-    { id:uid(), platform:'Meta', layer:'Consideration', type:'Tech Feature Video — Infotainment System', desc:'نظام Infotainment + الشاشة الرقمية + الاتصال — يستهدف المهتمين بالتقنية', tag:'Meta Lead Form', media:[] },
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "احجز Test Drive لـ Emgrand"', desc:'لمن زار الصفحة ولم يكمل — CTA واضح ومباشر', tag:'Meta Retargeting', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Identity CTA — "كن من أوائل الـ Emgrand owners"', desc:'يخاطب الـ Identity الشخصية ويخلق exclusivity حول الموديل', tag:'TikTok + Meta — Conversion', media:[] },
-    { id:uid(), platform:'Google', layer:'Conversion', type:'Search — "Emgrand سعر، مواصفات"', desc:'يستهدف الـ High Intent Search — يوجه لصفحة Lead مباشرة', tag:'Google Search — CPC $1.5', media:[] },
-  ]
 };
 
 let currentPhase = '1';
@@ -1391,7 +1377,7 @@ function initFirebase() {
     setStatus('connecting');
 
     // Load once on start only — no realtime listener
-    db.ref('geely_content_2026').once('value')
+    db.ref('soueast_dammam_2026').once('value')
       .then(snapshot => {
         const val = snapshot.val();
         if (val) {
@@ -1420,7 +1406,7 @@ function writePhase(phaseId) {
   if (!syncEnabled || !db) return;
   setStatus('saving');
   const phaseData = data[phaseId] || [];
-  db.ref('geely_content_2026/' + phaseId).set(phaseData)
+  db.ref('soueast_dammam_2026/' + phaseId).set(phaseData)
     .then(() => { setStatus('saved'); })
     .catch(e => { setStatus('offline'); showToast('خطأ في الحفظ'); });
 }
@@ -1429,7 +1415,7 @@ function writePhase(phaseId) {
 function saveData() {
   if (!syncEnabled || !db) return;
   setStatus('saving');
-  db.ref('geely_content_2026').set(data)
+  db.ref('soueast_dammam_2026').set(data)
     .then(() => { setStatus('saved'); showToast('تم الحفظ ✓'); })
     .catch(e => { setStatus('offline'); });
 }
@@ -1520,7 +1506,7 @@ initFirebase();
 
   <!-- WATAD FOOTER -->
   <footer style="position:relative;z-index:1;margin-top:3rem;padding:1rem 2rem;border-top:1px solid rgba(7,149,152,0.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-    <span style="font-size:11px;color:#5a7f82;font-family:'Tajawal',sans-serif;letter-spacing:1px">Prepared by Watad Agency · 2026 · Confidential</span>
+    <span style="font-size:11px;color:#5a7f82;font-family:'Tajawal',sans-serif;letter-spacing:1px">Prepared by Watad Agency for SOUEAST · 2026 · Confidential</span>
     <span style="font-size:12px;font-weight:900;color:#079598;font-family:'Tajawal',sans-serif;letter-spacing:6px">WATAD</span>
   </footer>
 </body>
