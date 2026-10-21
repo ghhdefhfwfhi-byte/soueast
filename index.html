@@ -974,39 +974,55 @@ const phaseConfig = {
 
 const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','Snapchat':'plt-snap','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
 
+const IG='https://www.instagram.com';
 const R = {
-  lights:{url:'https://www.zawya.com/en/press-release/companies-news/soueast-lights-up-the-middle-east-iconic-landmarks-agljfugp', note:'رفرنس من SOUEAST نفسها: حملة "EASE YOUR LIFE" — إضاءة معالم بالشرق الأوسط بلون البراند. الفكرة: نسويها محلياً — إضاءة واجهة المعرض/معلم بالدمام + تصوير ليلي.'},
-  launch:{url:'https://www.automotiveworld.com/news-releases/soueast-launches-s06-s07-s09-in-saudi-arabia-accelerating-expansion-in-the-middle-east/', note:'خبر إطلاق S06 / S07 / S09 بالسعودية — نسحب منه رسائل البراند الرسمية للمحتوى.'},
-  s06black:{url:'https://www.youtube.com/watch?v=GK79a2s9arc', note:'S06 Black Edition — رفرنس للّوك السينمائي والزوايا القريبة. مناسب للـ Reels والـ Snap.'},
-  s09family:{url:'https://www.youtube.com/watch?v=4uIZbSNiRYo', note:'S09 كـ SUV عائلي فاخر — رفرنس لزاوية العائلة (7 مقاعد) اللي تناسب جمهور الشرقية.'},
-  haraj:{url:'https://www.adsoftheworld.com/campaigns/ce49d322-a19b-4640-a41a-26f19ec60acd', note:'حراج — "خذها من اللي يفهمك": رفرنس سعودي للنبرة المحلية واللهجة والتيزر قبل الحملة.'},
-  jetour:{url:'https://www.sayarabay.com/car-news/jetour-strengthens-saudi-presence-with-al-khobar-dealership-launch', note:'منافس: Jetour افتتح معرض بالخبر — نراقب شلون أعلنوا عن الافتتاح بنفس المنطقة.'},
-  porsche:{url:'https://newsroom.porsche.com/en_PME/2025/company/porsche-khobar-new-showroom.html', note:'افتتاح معرض Porsche بالخبر — رفرنس لتصوير المعرض نفسه كتجربة (Showroom as destination).'},
-  omoda:{url:'https://saudiauto.com.sa/en/auto-run-omuda-jayco-showroom/', note:'افتتاح معرض Omoda & Jaecoo — رفرنس صيني منافس لافتتاح معرض بالسعودية.'},
-  exp:{url:'https://www.sixteen-nine.net/?p=39540', note:'وكيل سعودي سوّى شاشات وتجربة تفاعلية بالمعرض — أفكار لمحتوى "شوف المعرض من جوّا".'},
+  mbComing:{url:IG+'/mercedesbenzksa/reel/DYhNpmotL-5/', note:'Mercedes-Benz KSA — 101K مشاهدة. "قوة استثنائية في طريقها إليكم… وصوتها يسبق حضورها" — تيزر "قريباً" بالصوت قبل الصورة. نفس الفكرة لـ "SOUEAST قريباً في الدمام".'},
+  lexusTeaser:{url:IG+'/lexusksa/reel/Dd89VapAoIz/', note:'Lexus KSA — 1M مشاهدة (الأعلى بحسابهم). تيزر قصير جداً بجملة وحدة "بُعدٌ آخر للإبداع" — مثال على Hook بسيط بدون معلومات كثيرة.'},
+  bmw5:{url:IG+'/bmwsaudiarabia/reel/Da73b94jltf/', note:'BMW Saudi Arabia — 1.9M (الأعلى بحسابهم). تصميم + تقنية + متعة قيادة بكابشن عربي واضح. رفرنس لـ Reels تعريف بالبراند.'},
+  audiGreat:{url:IG+'/audi/reel/DdoJxrcltZG/', note:'Audi — 3.8M. "What’s the secret to greatness?" — فيديو براند قصة بدون عرض أسعار. رفرنس لنبرة البراند.'},
+  bmwX7:{url:IG+'/bmwsaudiarabia/reel/DanQPyht5BT/', note:'BMW Saudi Arabia — 1.5M. X7 والتفاصيل كـ "الحكاية كاملة" — SUV كبير مناسب لزاوية S09 العائلية، وينتهي بدعوة لزيارة المعرض.'},
+  bmwI5:{url:IG+'/bmw/reel/DdwaonGk6AX/', note:'BMW — 2.6M. "From parts to presence in seconds" — مونتاج سريع يجمع السيارة قطعة قطعة. Hook قوي لأول ثانيتين.'},
+  audiNight:{url:IG+'/audi/reel/DeW0vkuDcUg/', note:'Audi — 12.8M (الأنجح بكل اللي سحبتهم). RS 5 بتصوير ليلي مستوحى من سماء سنغافورة — بالضبط فكرة التصوير الليلي والإضاءة بلون البراند بالدمام.'},
+  bmwLight:{url:IG+'/bmw/reel/DeEKFNeCcAv/', note:'BMW — 2.1M. Welcome light والإضاءة قبل لا تبدأ الرحلة — لقطات ليلية للإضاءة الأمامية والخلفية.'},
+  bmwTwo:{url:IG+'/bmwsaudiarabia/reel/DZfKi65D0fL/', note:'BMW Saudi Arabia — 1.4M. "أيقونتان. حضور لا يُخطئ" — X5 M و X6 M بنفس الفيديو. نفس فكرة S06 vs S09.'},
+  bmwDetail:{url:IG+'/bmw/reel/Dd8b7cXjjQa/', note:'BMW — 2.2M. "Comment which detail caught your eye" — CTA للكومنت يرفع التفاعل. نطبقه: "S06 لو S09؟ اكتب بالكومنت".'},
+  mbDokhi:{url:IG+'/mercedesbenzksa/reel/DY2fRkFkvnj/', note:'Mercedes-Benz KSA مع محمد الدوخي — 87K. وجه سعودي معروف + نبرة محلية. فكرة: كرييتر من الشرقية.'},
+  mbMirage:{url:IG+'/mercedesbenzksa/reel/Dac8UOWCBQK/', note:'Mercedes-Benz KSA — 200K (الأعلى بحسابهم). G 63 "سراب" مستوحى من الصحراء — ربط السيارة بالبيئة السعودية.'},
+  porscheSketch:{url:IG+'/porsche/reel/DdwTr8wKlTU/', note:'Porsche — 4.3M. رسّام يرسم السيارة (#PorscheMoment) — محتوى كرييتر بسيط ورخيص ويجيب مشاهدات عالية.'},
+  bmwShape:{url:IG+'/bmw/reel/DeL4qFBj6Jn/', note:'BMW — 2.3M. "Something expressive is taking shape" — تيزر كشف تدريجي قبل الإطلاق.'},
+  bmwMillion:{url:IG+'/bmw/reel/Dd_p30MkYPY/', note:'BMW — 8M (الأعلى بحسابهم). "999,999 came before it" — قصة + ترقب للحظة الكشف. رفرنس للـ Partial Reveal.'},
+  porscheDetail:{url:IG+'/porsche/reel/Db53IowI10b/', note:'Porsche — 3.1M. "The art of getting the details right" — لقطات قريبة للتفاصيل بدون كشف كامل.'},
+  lexusEvent:{url:IG+'/lexusksa/reel/Dd6ODuUFQo3/', note:'Lexus KSA — 354K. أجواء أمسية الكشف عن ES 2026 بمركز لكزس عبداللطيف جميل (طريق المدينة) — رفرنس مباشر لتغطية حفل افتتاح بمعرض بالسعودية.'},
+  bmwHira:{url:IG+'/bmwsaudiarabia/reel/DZZfjb4DAJt/', note:'BMW Saudi Arabia — 378K. "اكتشف صالة عرض BMW الجديدة كلياً في حراء" — أقرب رفرنس لإعلان افتتاح معرض جديد بالسعودية.'},
+  bmwHira2:{url:IG+'/bmwsaudiarabia/reel/DZ2QGF5NtLX/', note:'BMW Saudi Arabia — 324K. "اكتشفوا وجهتنا الجديدة في حراء، جدة" — جولة بالمعرض الجديد والخدمات.'},
+  bmw7:{url:IG+'/bmwsaudiarabia/reel/DdOnZX-tOow/', note:'BMW Saudi Arabia — 196K. بلهجة سعودية "مو مجرد سيارة فاخرة.. هي تجربة متكاملة" — نبرة قريبة مناسبة لإعلانات Test Drive.'},
+  audiTour:{url:IG+'/audi/reel/Db5ZDaHgCTn/', note:'Audi — 12.1M. ملخص فعالية (Summer Tour) "One highlight after another" — رفرنس لريكاب يوم الافتتاح.'},
+  bmw320:{url:IG+'/bmw/reel/DeBlWH9CUCd/', note:'BMW — 2.7M. "sporty, modern and timeless" — موديل واحد بلقطات نظيفة. مناسب لـ Retargeting بموديل واحد.'},
+  porscheCommunity:{url:IG+'/porsche/reel/DcypBtqB_BK/', note:'Porsche — 2.4M. "Nobody needs a sportscar. We just end up loving them anyway" — محتوى مجتمع وملاك، رفرنس لـ UGC العملاء.'},
 };
 let data = {
   '1': [
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Snap Ads 6–10s — "SOUEAST قريباً في الدمام"', desc:'لقطات سريعة لـ S06 و S09 + لوكيشن الدمام + نهاية بـ "قريباً". فيرتكال، أول 2 ثانية فيها السيارة.', tag:'Snapchat — Snap Ads 9:16', media:[R.s06black, R.launch] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Reels 15s — تعريف بالبراند', desc:'مين هي SOUEAST؟ تصميم، تقنية، ضمان — بدون أسعار. يبني الثقة ببراند جديد على السوق.', tag:'Meta IG/FB — Reels 15s', media:[R.launch, R.s06black] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'In-Feed 15–20s — S09 للعائلة', desc:'S09 كسيارة العائلة بالشرقية: 7 مقاعد، مساحة، رحلة الويكند للخبر/البحر. أسلوب Organic.', tag:'TikTok — In-Feed', media:[R.s09family] },
-    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Night Shoot — إضاءة بلون SOUEAST', desc:'تصوير ليلي لواجهة المعرض أو معلم بالدمام مضاء بلون البراند — نفس فكرة "EASE YOUR LIFE" لكن محلياً.', tag:'Meta + Snap + TikTok — 10–15s', media:[R.lights] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — S06 vs S09 "أيهم يناسبك؟"', desc:'كاروسيل يعرض الموديلين: S06 للشباب/المدينة، S09 للعائلة. يجيب engagement بالكومنتات.', tag:'Meta IG/FB — Carousel', media:[R.s06black, R.s09family] },
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Local Tone — لهجة شرقاوية', desc:'سكربت قصير بلهجة المنطقة الشرقية — نبرة قريبة من الناس مثل رفرنس حراج.', tag:'Snapchat + TikTok — 10s', media:[R.haraj] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Snap Ads 6–10s — "SOUEAST قريباً في الدمام"', desc:'لقطات سريعة لـ S06 و S09 + لوكيشن الدمام + نهاية بـ "قريباً". فيرتكال، أول 2 ثانية فيها السيارة.', tag:'Snapchat — Snap Ads 9:16', media:[R.mbComing, R.lexusTeaser] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Reels 15s — تعريف بالبراند', desc:'مين هي SOUEAST؟ تصميم، تقنية، ضمان — بدون أسعار. يبني الثقة ببراند جديد على السوق.', tag:'Meta IG/FB — Reels 15s', media:[R.bmw5, R.audiGreat] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'In-Feed 15–20s — S09 للعائلة', desc:'S09 كسيارة العائلة بالشرقية: 7 مقاعد، مساحة، رحلة الويكند للخبر/البحر. أسلوب Organic.', tag:'TikTok — In-Feed', media:[R.bmwX7, R.bmwI5] },
+    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Night Shoot — إضاءة بلون SOUEAST', desc:'تصوير ليلي لواجهة المعرض أو معلم بالدمام مضاء بلون البراند — نفس فكرة "EASE YOUR LIFE" لكن محلياً.', tag:'Meta + Snap + TikTok — 10–15s', media:[R.audiNight, R.bmwLight] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — S06 vs S09 "أيهم يناسبك؟"', desc:'كاروسيل يعرض الموديلين: S06 للشباب/المدينة، S09 للعائلة. يجيب engagement بالكومنتات.', tag:'Meta IG/FB — Carousel', media:[R.bmwTwo, R.bmwDetail] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Local Tone — لهجة شرقاوية', desc:'سكربت قصير بلهجة المنطقة الشرقية — نبرة قريبة من الناس مثل رفرنس حراج.', tag:'Snapchat + TikTok — 10s', media:[R.mbDokhi, R.mbMirage] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Creator Collab — رسّام/كرييتر يرسم S06', desc:'كرييتر من الشرقية يرسم أو يصوّر السيارة بأسلوبه — محتوى يحس Organic ويجيب مشاهدات بتكلفة قليلة.', tag:'TikTok + Reels — Spark/Partnership Ads', media:[R.porscheSketch] },
   ],
   '2': [
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Countdown — "باقي X أيام"', desc:'ستوري/سناب يومي يعد للافتتاح — كل يوم تفصيلة جديدة من المعرض.', tag:'Snapchat — Daily', media:[] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Partial Reveal — المعرض من وراء الستار', desc:'لقطات قريبة للمعرض والسيارات مغطاة — كشف تدريجي.', tag:'Meta Reels + Stories', media:[R.exp] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Invite — "انت معزوم على الافتتاح"', desc:'دعوة مفتوحة لحفل الافتتاح: التاريخ، اللوكيشن، وش بيكون موجود.', tag:'TikTok — In-Feed', media:[] },
+    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Countdown — "باقي X أيام"', desc:'ستوري/سناب يومي يعد للافتتاح — كل يوم تفصيلة جديدة من المعرض.', tag:'Snapchat — Daily', media:[R.bmwShape, R.mbComing] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Partial Reveal — المعرض من وراء الستار', desc:'لقطات قريبة للمعرض والسيارات مغطاة — كشف تدريجي.', tag:'Meta Reels + Stories', media:[R.bmwMillion, R.porscheDetail] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Invite — "انت معزوم على الافتتاح"', desc:'دعوة مفتوحة لحفل الافتتاح: التاريخ، اللوكيشن، وش بيكون موجود.', tag:'TikTok — In-Feed', media:[R.lexusEvent] },
   ],
   '3': [
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Store Traffic — "زورنا اليوم"', desc:'إعلان بلوكيشن المعرض + Get Directions — يستهدف نطاق الدمام.', tag:'Meta — Visit Location', media:[R.porsche] },
-    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'Lead Form — احجز Test Drive', desc:'فورم Native: الاسم، الجوال، الموديل (S06/S09)، الوقت المناسب.', tag:'Snapchat — Lead Gen', media:[] },
-    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Live Coverage — يوم الافتتاح', desc:'تغطية سريعة من الحفل + ناس تجرب السيارات — تتحول لإعلان Spark Ads.', tag:'TikTok — Spark Ads', media:[R.omoda] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Store Traffic — "زورنا اليوم"', desc:'إعلان بلوكيشن المعرض + Get Directions — يستهدف نطاق الدمام.', tag:'Meta — Visit Location', media:[R.bmwHira, R.bmwHira2] },
+    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'Lead Form — احجز Test Drive', desc:'فورم Native: الاسم، الجوال، الموديل (S06/S09)، الوقت المناسب.', tag:'Snapchat — Lead Gen', media:[R.bmw7] },
+    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Live Coverage — يوم الافتتاح', desc:'تغطية سريعة من الحفل + ناس تجرب السيارات — تتحول لإعلان Spark Ads.', tag:'TikTok — Spark Ads', media:[R.lexusEvent, R.audiTour] },
   ],
   '4': [
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "لسه ما جربتها؟"', desc:'لكل من شاف فيديوهات الافتتاح أو تفاعل — CTA مباشر Test Drive.', tag:'Meta — Retargeting Lead Form', media:[] },
-    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'UGC — تجارب العملاء بالمعرض', desc:'عملاء حقيقيين بعد الـ Test Drive — رأيهم بجملة وحدة.', tag:'Snapchat + TikTok — 10–15s', media:[R.jetour] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "لسه ما جربتها؟"', desc:'لكل من شاف فيديوهات الافتتاح أو تفاعل — CTA مباشر Test Drive.', tag:'Meta — Retargeting Lead Form', media:[R.bmw320] },
+    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'UGC — تجارب العملاء بالمعرض', desc:'عملاء حقيقيين بعد الـ Test Drive — رأيهم بجملة وحدة.', tag:'Snapchat + TikTok — 10–15s', media:[R.porscheCommunity] },
   ],
 };
 
@@ -1377,7 +1393,7 @@ function initFirebase() {
     setStatus('connecting');
 
     // Load once on start only — no realtime listener
-    db.ref('soueast_dammam_2026').once('value')
+    db.ref('soueast_dammam_v2').once('value')
       .then(snapshot => {
         const val = snapshot.val();
         if (val) {
@@ -1406,7 +1422,7 @@ function writePhase(phaseId) {
   if (!syncEnabled || !db) return;
   setStatus('saving');
   const phaseData = data[phaseId] || [];
-  db.ref('soueast_dammam_2026/' + phaseId).set(phaseData)
+  db.ref('soueast_dammam_v2/' + phaseId).set(phaseData)
     .then(() => { setStatus('saved'); })
     .catch(e => { setStatus('offline'); showToast('خطأ في الحفظ'); });
 }
@@ -1415,7 +1431,7 @@ function writePhase(phaseId) {
 function saveData() {
   if (!syncEnabled || !db) return;
   setStatus('saving');
-  db.ref('soueast_dammam_2026').set(data)
+  db.ref('soueast_dammam_v2').set(data)
     .then(() => { setStatus('saved'); showToast('تم الحفظ ✓'); })
     .catch(e => { setStatus('offline'); });
 }
