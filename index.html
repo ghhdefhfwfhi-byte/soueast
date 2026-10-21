@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geely × Watad — Content Dashboard 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #16232A;
+  --bg2: #0d1a1f;
+  --bg3: #1a2f35;
+  --border: rgba(7,149,152,0.15);
+  --border-hover: rgba(7,149,152,0.4);
+  --text: #ffffff;
+  --text2: #a8c4c6;
+  --text3: #5a7f82;
+  --accent: #079598;
+  --accent2: #FF5B04;
+  --green: #079598;
+  --amber: #FF5B04;
+  --red: #ff4d6a;
+  --meta: #1877F2;
+  --tiktok: #69c9d0;
+  --yt: #FF0000;
+  --google: #4285F4;
+  --phase1: #079598;
+  --phase2: #FF5B04;
+  --phase3: #079598;
+  --phase4c: #FF5B04;
+  --phase4e: #079598;
+  --dark-teal: #003333;
+  --light-teal: #E3EDEE;
+  --accent-teal: #079598;
+  --dark-navy: #16232A;
+  --orange: #FF5B04;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(7,149,152,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7,149,152,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* TOP NAV */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #003333;
+  border-bottom: 3px solid #FF5B04;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-badge {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  background: #FF5B04;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 2px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.nav-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-meta {
+  font-size: 12px;
+  color: var(--text2);
+  font-family: 'Space Mono', monospace;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn:hover { background: var(--bg2); border-color: var(--border-hover); }
+
+.btn-primary {
+  background: #FF5B04;
+  border-color: #FF5B04;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-primary:hover { background: #e04e00; border-color: #e04e00; }
+
+/* PHASE TABS */
+.phase-bar {
+  position: relative;
+  z-index: 1;
+  padding: 0.75rem 2rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(7,149,152,0.2);
+  background: #0d1a1f;
+}
+
+.phase-tab {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.phase-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.phase-tab:hover { border-color: var(--border-hover); color: var(--text); }
+.phase-tab.active { color: #fff; }
+.phase-tab[data-phase="1"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
+.phase-tab[data-phase="2"].active { border-color: #FF5B04; background: rgba(255,91,4,0.15); color: #fff; }
+.phase-tab[data-phase="3"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
+.phase-tab[data-phase="4c"].active { border-color: #FF5B04; background: rgba(255,91,4,0.15); color: #fff; }
+.phase-tab[data-phase="4e"].active { border-color: #079598; background: rgba(7,149,152,0.15); color: #fff; }
+
+/* MAIN */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* PHASE HEADER */
+.phase-header-card {
+  background: #003333;
+  border: none;
+  border-left: 4px solid #FF5B04;
+  border-radius: 0;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.phase-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.phase-sub {
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.phase-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.badge-period { background: rgba(255,255,255,0.05); border-color: var(--border); color: var(--text2); }
+.badge-budget { background: rgba(0,229,160,0.1); border-color: rgba(0,229,160,0.3); color: var(--green); }
+.badge-obj { background: rgba(61,107,255,0.1); border-color: rgba(61,107,255,0.3); color: #7fa3ff; }
+
+.kpi-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.kpi-box {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(7,149,152,0.25);
+  border-radius: 2px;
+  padding: 10px 16px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.kpi-label { font-size: 10px; color: #a8c4c6; margin-bottom: 4px; font-family: 'Tajawal', sans-serif; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
+.kpi-val { font-size: 18px; font-weight: 700; color: var(--text); }
+
+/* SECTION HEADER */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #079598;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* LAYER SECTION */
+.layer-section {
+  margin-bottom: 2rem;
+}
+
+.layer-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* CARDS GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.content-card {
+  background: #0d1a1f;
+  border: 1px solid rgba(7,149,152,0.15);
+  border-radius: 2px;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.content-card:hover {
+  border-color: rgba(7,149,152,0.5);
+  box-shadow: 0 0 0 1px rgba(7,149,152,0.2);
+}
+
+.card-top {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(7,149,152,0.15);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-platform-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+}
+
+.card-body { padding: 12px 16px; }
+
+.card-type {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  resize: none;
+  font-family: 'Tajawal', sans-serif;
+  min-height: 50px;
+}
+
+.card-type:focus, .card-desc:focus {
+  color: var(--text);
+}
+
+.card-footer {
+  padding: 10px 16px;
+  border-top: 1px solid rgba(7,149,152,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-tag {
+  font-size: 11px;
+  color: var(--text3);
+  font-family: 'Space Mono', monospace;
+  outline: none;
+  background: transparent;
+  border: none;
+  width: 140px;
+  color: var(--text3);
+  font-family: 'Space Mono', monospace;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.icon-btn:hover { background: var(--bg); color: var(--text); border-color: var(--border-hover); }
+.icon-btn.danger:hover { background: rgba(255,77,106,0.15); color: var(--red); border-color: rgba(255,77,106,0.4); }
+
+/* MEDIA SECTION inside card */
+.card-media {
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  display: none;
+}
+
+.card-media.open { display: block; }
+
+.media-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.media-input {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 12px;
+  font-family: 'Space Mono', monospace;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.media-input:focus { border-color: var(--accent); }
+.media-input::placeholder { color: var(--text3); }
+
+.media-btn {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 2px;
+  border: 1px solid #FF5B04;
+  background: rgba(255,91,4,0.15);
+  color: #FF5B04;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.media-btn:hover { background: rgba(255,91,4,0.3); }
+
+.media-items { display: flex; flex-direction: column; gap: 6px; }
+
+.media-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.media-item-icon { font-size: 14px; flex-shrink: 0; }
+
+.media-item-link {
+  font-size: 11px;
+  color: #7fa3ff;
+  font-family: 'Space Mono', monospace;
+  text-decoration: none;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.media-item-link:hover { color: var(--accent); }
+
+.media-item-del {
+  font-size: 11px;
+  color: var(--text3);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.media-item-del:hover { color: var(--red); }
+
+.media-item-note {
+  font-size: 13px;
+  color: var(--text2);
+  font-family: 'Tajawal', sans-serif;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  outline: none;
+  width: 100%;
+  margin-top: 6px;
+  direction: rtl;
+  min-height: 60px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.media-preview {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  background: #000;
+  position: relative;
+  cursor: pointer;
+}
+
+.media-preview img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.media-preview img:hover { opacity: 0.85; }
+
+.media-preview-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255,91,4,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.media-preview-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 16px 8px 6px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Tajawal', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.media-preview-img-only {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.media-preview-img-only img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.media-preview-img-only img:hover { opacity: 0.85; }
+
+.media-item-note:focus {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+}
+
+.media-preview {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  background: #000;
+  position: relative;
+  cursor: pointer;
+}
+
+.media-preview img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.media-preview img:hover { opacity: 0.85; }
+
+.media-preview-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255,91,4,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.media-preview-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 16px 8px 6px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Tajawal', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.media-preview-img-only {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.media-preview-img-only img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.media-preview-img-only img:hover { opacity: 0.85; }
+
+.media-item-note:focus { color: var(--text); }
+.media-item-note::placeholder { color: var(--text3); }
+
+.media-item-inner { flex: 1; min-width: 0; }
+
+/* ADD CARD BUTTON */
+.add-card-btn {
+  background: var(--bg2);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text3);
+  font-size: 13px;
+  font-family: 'Tajawal', sans-serif;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.add-card-btn:hover { border-color: var(--border-hover); color: var(--text2); background: var(--bg3); }
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: #003333;
+  border: 1px solid rgba(7,149,152,0.4);
+  border-top: 3px solid #FF5B04;
+  border-radius: 2px;
+  width: 480px;
+  max-width: 95vw;
+  padding: 1.5rem;
+  position: relative;
+  animation: modal-in 0.2s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.modal-close:hover { border-color: var(--red); color: var(--red); }
+
+.form-group { margin-bottom: 14px; }
+
+.form-label {
+  font-size: 11px;
+  color: var(--text2);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: #0d1a1f;
+  border: 1px solid rgba(7,149,152,0.25);
+  border-radius: 2px;
+  padding: 9px 12px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #079598; }
+.form-textarea { resize: vertical; min-height: 70px; }
+.form-select { cursor: pointer; }
+.form-select option { background: var(--bg2); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* BUDGET BARS */
+.budget-section {
+  background: #003333;
+  border: none;
+  border-right: 3px solid #079598;
+  border-radius: 0;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.budget-row:last-child { margin-bottom: 0; }
+
+.budget-platform {
+  font-size: 12px;
+  font-family: 'Space Mono', monospace;
+  color: var(--text2);
+  width: 70px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.budget-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.budget-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.budget-val {
+  font-size: 12px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  width: 55px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+/* PHASE PANELS */
+.phase-panel { display: none; }
+.phase-panel.active { display: block; animation: fadein 0.25s ease; }
+@keyframes fadein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #003333;
+  border: 1px solid #FF5B04;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #FF5B04;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+/* PLATFORM COLORS */
+.plt-meta { background: rgba(24,119,242,0.15); color: #7fa3ff; }
+.plt-tiktok { background: rgba(105,201,208,0.15); color: var(--tiktok); }
+.plt-yt { background: rgba(255,0,0,0.15); color: #ff8080; }
+.plt-google { background: rgba(66,133,244,0.15); color: #7fa3ff; }
+.plt-all { background: rgba(255,255,255,0.08); color: var(--text2); }
+
+/* RESPONSIVE */
+@media(max-width:640px) {
+  main { padding: 1rem; }
+  .phase-header-card { flex-direction: column; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .topnav { padding: 0 1rem; }
+  .phase-bar { padding: 0.75rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="nav-logo">
+    <span class="nav-logo-badge">WATAD</span>
+    <span class="nav-title">Geely Content Plan 2026</span>
+  </div>
+  <div class="nav-meta" id="save-status">ready</div>
+  <div class="nav-actions">
+    <button class="btn" onclick="openAddModal()">+ إضافة محتوى</button>
+    <button class="btn btn-primary" onclick="saveData()">💾 حفظ</button>
+  </div>
+</nav>
+
+<!-- PHASE TABS -->
+<div class="phase-bar">
+  <button class="phase-tab active" data-phase="1" onclick="switchPhase('1', this)">
+    <span class="phase-dot" style="background:var(--phase1)"></span> Phase 1 — Awareness
+  </button>
+  <button class="phase-tab" data-phase="2" onclick="switchPhase('2', this)">
+    <span class="phase-dot" style="background:var(--phase2)"></span> Phase 2 — Teaser
+  </button>
+  <button class="phase-tab" data-phase="3" onclick="switchPhase('3', this)">
+    <span class="phase-dot" style="background:var(--phase3)"></span> Phase 3 — Pre-Order
+  </button>
+  <button class="phase-tab" data-phase="4c" onclick="switchPhase('4c', this)">
+    <span class="phase-dot" style="background:var(--phase4c)"></span> Phase 4 — Coolray
+  </button>
+  <button class="phase-tab" data-phase="4e" onclick="switchPhase('4e', this)">
+    <span class="phase-dot" style="background:var(--phase4e)"></span> Phase 4 — Emgrand
+  </button>
+</div>
+
+<main id="main-content"></main>
+
+<!-- ADD MODAL -->
+<div class="modal-overlay" id="modal-add">
+  <div class="modal">
+    <div class="modal-title">
+      إضافة محتوى جديد
+      <button class="modal-close" onclick="closeModal('modal-add')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">PHASE</label>
+      <select class="form-select" id="add-phase">
+        <option value="1">Phase 1 — Brand Awareness</option>
+        <option value="2">Phase 2 — Teaser</option>
+        <option value="3">Phase 3 — Pre-Order</option>
+        <option value="4c">Phase 4 — Coolray</option>
+        <option value="4e">Phase 4 — Emgrand</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">المنصة</label>
+        <select class="form-select" id="add-platform">
+          <option>Meta</option>
+          <option>TikTok</option>
+          <option>YouTube</option>
+          <option>Google</option>
+          <option>All Platforms</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">الطبقة</label>
+        <select class="form-select" id="add-layer">
+          <option>Awareness</option>
+          <option>Consideration</option>
+          <option>Conversion</option>
+          <option>General</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">نوع المحتوى</label>
+      <input class="form-input" id="add-type" placeholder="مثال: Short Video 15s — Lifestyle" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">الوصف</label>
+      <textarea class="form-textarea" id="add-desc" placeholder="وصف الفكرة والهدف منها..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">التاق / المنصة المستهدفة</label>
+      <input class="form-input" id="add-tag" placeholder="Meta Reels + TikTok — 15s" />
+    </div>
+    <div class="form-group">
+      <label class="form-label">لينك أو فيديو (اختياري)</label>
+      <input class="form-input" id="add-media" placeholder="https://..." />
+    </div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal('modal-add')">إلغاء</button>
+      <button class="btn btn-primary" onclick="addCard()">+ إضافة</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+const phaseConfig = {
+  '1':  { name:'Phase 1 — Brand Awareness', sub:'بناء الوعي بالبراند قبل الكشف عن أي موديل', period:'May W1 – Jun W4', budget:'$10,000', obj:'Awareness — CPM', color:'#3d6bff', kpis:[{l:'Reach',v:'1.65M'},{l:'Impressions',v:'5.67M'},{l:'Clicks',v:'83.7K'},{l:'CPM',v:'~$1.76'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$7,000'},{p:'YouTube',pct:10,color:'#FF0000',val:'$1,000'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$2,000'}] },
+  '2':  { name:'Phase 2 — Teaser', sub:'إثارة الفضول وبناء الترقب — كشف جزئي تدريجي', period:'May W2 – May W3', budget:'$4,000', obj:'Teaser — CPM', color:'#7c4dff', kpis:[{l:'Reach',v:'660K'},{l:'Impressions',v:'2.27M'},{l:'Clicks',v:'33.5K'},{l:'Duration',v:'2 Weeks'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$2,800'},{p:'YouTube',pct:10,color:'#FF0000',val:'$400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
+  '3':  { name:'Phase 3 — Pre-Order', sub:'تحويل الاهتمام إلى إجراء — جمع Leads وحجز مسبق', period:'May W3 – May W4', budget:'$4,000', obj:'Conversion — CPC', color:'#f5a623', kpis:[{l:'Reach',v:'49.7K'},{l:'Clicks',v:'10.7K'},{l:'Leads',v:'360'},{l:'CPL',v:'$11.1'}], budgets:[{p:'Google',pct:10,color:'#4285F4',val:'$400'},{p:'Meta',pct:70,color:'#1877F2',val:'$2,800'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
+  '4c': { name:'Phase 4 — Coolray Launch', sub:'إطلاق وتثبيت Coolray — ثلاث طبقات متكاملة', period:'Jun W1 – Aug W4', budget:'$15,000', obj:'Launch & Sustain — 12 Weeks', color:'#00e5a0', kpis:[{l:'Reach',v:'2.79M'},{l:'Impressions',v:'9.97M'},{l:'Leads',v:'2,057'},{l:'CPL',v:'~$4.6'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$10,500'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$3,000'},{p:'Google',pct:7,color:'#4285F4',val:'$1,050'},{p:'YouTube',pct:3,color:'#FF0000',val:'$450'}] },
+  '4e': { name:'Phase 4 — Emgrand Launch', sub:'إطلاق وتثبيت Emgrand — محتوى يناسب شخصيته الـ Premium', period:'Jun W1 – Aug W4', budget:'$15,000', obj:'Launch & Sustain — 12 Weeks', color:'#ff4d6a', kpis:[{l:'Reach',v:'2.79M'},{l:'Impressions',v:'9.97M'},{l:'Leads',v:'2,057'},{l:'CPL',v:'~$4.6'}], budgets:[{p:'Meta',pct:70,color:'#1877F2',val:'$10,500'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$3,000'},{p:'Google',pct:7,color:'#4285F4',val:'$1,050'},{p:'YouTube',pct:3,color:'#FF0000',val:'$450'}] },
+};
+
+const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
+
+let data = {
+  '1': [
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Image / Carousel / Short Video', desc:'محتوى بصري راقي يعرّف بهوية Geely — جودة الصناعة، التصميم، القيم', tag:'Meta IG/FB — 30s', media:[] },
+    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Skippable In-stream Ads', desc:'فيديو براند 30 ثانية يحكي قصة Geely بدون ذكر موديل محدد', tag:'YouTube — Brand Film', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Short Video 15–20s', desc:'محتوى يجذب الجمهور الشاب — أسلوب حياة + تصميم السيارات', tag:'TikTok — In-Feed', media:[] },
+    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Brand Film — "Made for your world"', desc:'فيديو براند يحكي قصة Geely من الصين للعالم بدون عرض موديل محدد', tag:'Meta + YouTube — 30s', media:[] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — تفاصيل التصميم', desc:'صور عالية الجودة لتفاصيل Geely — كل صورة تعرض تفصيلة مختلفة', tag:'Meta IG/FB', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Trend-Based — Before vs After', desc:'فيديو "Before vs After" يعرض مشهد حياة يومي مع سيارة Geely', tag:'TikTok — 15s', media:[] },
+  ],
+  '2': [
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Teaser Video 10–15s — Partial Reveal', desc:'كشف جزئي للسيارة — ظلال، تفاصيل مصابيح، سطح السيارة — بدون عرض الشكل الكامل', tag:'Meta IG/FB — Teaser', media:[] },
+    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Teaser In-stream 20s — Logo Reveal', desc:'ينتهي الفيديو بظهور شعار Geely فقط — يبني التشويق بدون كشف', tag:'YouTube — Logo Only', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Sound-Led Reveal', desc:'صوت المحرك أو الباب + مشهد درامي — يخلق فضول بالصوت قبل الصورة', tag:'TikTok — Sound Teaser', media:[] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Countdown Story — "Something is coming"', desc:'عداد أيام يتراجع حتى يوم الإطلاق — يُحدَّث يومياً', tag:'Meta Stories — Daily Update', media:[] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Close-up Carousel — "أي سيارة هذه؟"', desc:'Close-up لتفاصيل السيارة — يخلق engagement ويبني anticipation', tag:'Meta IG — Engagement', media:[] },
+  ],
+  '3': [
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'In-App Lead + Website Lead (A/B)', desc:'نموذج داخل Meta للحجز المسبق + Landing Page — A/B بين الاثنين', tag:'Meta — CPC $0.35–$0.5 — 244 Leads', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Direct Lead + Website Lead (A/B)', desc:'نموذج TikTok Lead Gen + Website — CTA "احجز الآن قبل الإطلاق"', tag:'TikTok — CPC $0.15–$0.4', media:[] },
+    { id:uid(), platform:'Google', layer:'Conversion', type:'Search Campaign — Pre-Order Intent', desc:'كلمات مفتاحية تستهدف من يبحث عن Geely أو سيارات جديدة', tag:'Google Search — 16 Leads', media:[] },
+    { id:uid(), platform:'All Platforms', layer:'Conversion', type:'Full Reveal Video + CTA "احجز أول واحد"', desc:'أول ظهور كامل للموديل مع عرض المميزات الرئيسية', tag:'Meta + TikTok — Launch Reveal', media:[] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Urgency Creative — "المقاعد محدودة"', desc:'عداد + CTA مباشر — يخلق urgency للتسجيل الآن — يستهدف الـ Warm Audience', tag:'Meta Stories — Retargeting', media:[] },
+  ],
+  '4c': [
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Image / Carousel / Short Video (20s features)', desc:'محتوى بصري يعرض مميزات Coolray — أسلوب شبابي وديناميكي', tag:'Meta IG/FB — Awareness CPM', media:[] },
+    { id:uid(), platform:'YouTube', layer:'Awareness', type:'Skippable In-stream (30s brand film)', desc:'Brand Film يعرض Coolray في بيئات متنوعة — شباب، مدينة، مغامرة', tag:'YouTube — Awareness', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Lifestyle Short Video (15-20s organic)', desc:'محتوى يشبه الـ Organic — "أول أسبوع مع Coolray"', tag:'TikTok — In-Feed', media:[] },
+    { id:uid(), platform:'Meta', layer:'Consideration', type:'Feature Deep-Dive — سلسلة 3 فيديوهات', desc:'كل فيديو يشرح مميزة واحدة بتفصيل — Safety, Tech, Design', tag:'Meta Lead Form — In-App', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Consideration', type:'Comparison — "ليش Coolray؟"', desc:'مقارنة Coolray بالفئة بأسلوب data-driven وجذاب', tag:'TikTok + Meta — CPC', media:[] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "Test Drive متاح الحين"', desc:'يستهدف زوار الموقع الذين لم يكملوا — Urgency Strong CTA', tag:'Meta Retargeting — A/B v1', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Urgency CTA (A/B v1)', desc:'Limited offer أو لون محدود — "فقط 50 سيارة بهذا اللون"', tag:'TikTok — Direct Lead', media:[] },
+    { id:uid(), platform:'Google', layer:'Conversion', type:'Search — Purchase Intent / Test Drive', desc:'"جرب Coolray مجاناً" → Lead Form مباشر — يستهدف الـ High Intent', tag:'Google Search — CPC $1.5', media:[] },
+  ],
+  '4e': [
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Brand Film — Executive Lifestyle 30s', desc:'أسلوب أكثر رسمية وراقي — يستهدف رجل الأعمال وعائلة الـ Mid-size Sedan', tag:'Meta + YouTube — Awareness', media:[] },
+    { id:uid(), platform:'Meta', layer:'Awareness', type:'Interior Showcase Carousel', desc:'الداخلية الفاخرة، شاشات التقنية، المقاعد الجلدية — بصور احترافية عالية الجودة', tag:'Meta IG/FB — CPM', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Awareness', type:'"Executive Lifestyle" — TikTok', desc:'فيديو يصور شخص ناجح يصل بـ Emgrand لاجتماع أو مناسبة', tag:'TikTok — 15-20s', media:[] },
+    { id:uid(), platform:'Meta', layer:'Consideration', type:'Emgrand vs Category — Specs Comparison', desc:'مقارنة بصرية: محرك، وقود، أمان — "ليش Emgrand؟"', tag:'Meta + TikTok — CPC', media:[] },
+    { id:uid(), platform:'Meta', layer:'Consideration', type:'Tech Feature Video — Infotainment System', desc:'نظام Infotainment + الشاشة الرقمية + الاتصال — يستهدف المهتمين بالتقنية', tag:'Meta Lead Form', media:[] },
+    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "احجز Test Drive لـ Emgrand"', desc:'لمن زار الصفحة ولم يكمل — CTA واضح ومباشر', tag:'Meta Retargeting', media:[] },
+    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Identity CTA — "كن من أوائل الـ Emgrand owners"', desc:'يخاطب الـ Identity الشخصية ويخلق exclusivity حول الموديل', tag:'TikTok + Meta — Conversion', media:[] },
+    { id:uid(), platform:'Google', layer:'Conversion', type:'Search — "Emgrand سعر، مواصفات"', desc:'يستهدف الـ High Intent Search — يوجه لصفحة Lead مباشرة', tag:'Google Search — CPC $1.5', media:[] },
+  ]
+};
+
+let currentPhase = '1';
+
+// ─── UTILS ──────────────────────────────────────────────────────────────────
+function uid() { return '_' + Math.random().toString(36).slice(2,9); }
+
+function getPlatformClass(p) { return platformClass[p] || 'plt-all'; }
+
+function isVideo(url) {
+  return /youtube|youtu\.be|vimeo|tiktok|instagram|\.mp4|\.mov|\.webm/i.test(url);
+}
+
+function getMediaIcon(url) {
+  if (/youtube|youtu\.be/i.test(url)) return '▶';
+  if (/tiktok/i.test(url)) return '🎵';
+  if (/instagram/i.test(url)) return '📷';
+  if (/drive\.google/i.test(url)) return '📁';
+  if (/\.mp4|\.mov|\.webm/i.test(url)) return '🎬';
+  return '🔗';
+}
+
+function shortUrl(url) {
+  try { return new URL(url).hostname.replace('www.','') + '...'; } catch { return url.slice(0,30)+'...'; }
+}
+
+function getYoutubeThumbnail(url) {
+  const patterns = [
+    /youtube\.com\/watch\?v=([^&]+)/,
+    /youtu\.be\/([^?&]+)/,
+    /youtube\.com\/embed\/([^?&]+)/,
+    /youtube\.com\/shorts\/([^?&]+)/,
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return { id: m[1], thumb: `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg` };
+  }
+  return null;
+}
+
+function isImageUrl(url) {
+  return /\.(jpg|jpeg|png|gif|webp|svg|bmp)(\?|$)/i.test(url);
+}
+
+function isVideoUrl(url) {
+  return /\.(mp4|mov|webm|avi)(\?|$)/i.test(url);
+}
+
+function buildMediaPreview(url, phaseId, cardId, idx) {
+  const yt = getYoutubeThumbnail(url);
+  if (yt) {
+    return `<div class="media-preview" onclick="window.open('${url}','_blank')" title="افتح في تاب جديد">
+      <img src="${yt.thumb}" alt="YouTube thumbnail" onerror="this.parentElement.style.display='none'" />
+      <div class="media-preview-play">▶</div>
+      <div class="media-preview-label">YouTube</div>
+    </div>`;
+  }
+  if (/tiktok\.com/i.test(url)) {
+    return `<div class="media-preview" onclick="window.open('${url}','_blank')" style="background:#010101;height:60px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:4px;margin-bottom:6px;cursor:pointer">
+      <span style="font-size:22px">🎵</span>
+      <span style="font-size:12px;color:#69c9d0;font-family:'Tajawal',sans-serif;font-weight:700">TikTok Video — اضغط للفتح</span>
+    </div>`;
+  }
+  if (/instagram\.com/i.test(url)) {
+    return `<div class="media-preview" onclick="window.open('${url}','_blank')" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);height:60px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:4px;margin-bottom:6px;cursor:pointer">
+      <span style="font-size:22px">📸</span>
+      <span style="font-size:12px;color:#fff;font-family:'Tajawal',sans-serif;font-weight:700">Instagram — اضغط للفتح</span>
+    </div>`;
+  }
+  if (isImageUrl(url)) {
+    return `<div class="media-preview-img-only" onclick="window.open('${url}','_blank')" title="افتح الصورة">
+      <img src="${url}" alt="preview" onerror="this.parentElement.style.display='none'" />
+    </div>`;
+  }
+  if (isVideoUrl(url)) {
+    return `<div style="margin-bottom:6px">
+      <video src="${url}" controls style="width:100%;max-height:160px;border-radius:4px;display:block;background:#000" onerror="this.style.display='none'"></video>
+    </div>`;
+  }
+  return ''; // no preview for generic links
+}
+
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+function renderAll() {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  Object.keys(phaseConfig).forEach(phaseId => {
+    const panel = document.createElement('div');
+    panel.className = 'phase-panel' + (phaseId === currentPhase ? ' active' : '');
+    panel.id = 'panel-' + phaseId;
+    panel.innerHTML = buildPanel(phaseId);
+    main.appendChild(panel);
+  });
+}
+
+function buildPanel(phaseId) {
+  const cfg = phaseConfig[phaseId];
+  const cards = data[phaseId] || [];
+
+  const budgetBars = cfg.budgets.map(b => `
+    <div class="budget-row">
+      <span class="budget-platform">${b.p}</span>
+      <div class="budget-track"><div class="budget-fill" style="width:${b.pct}%;background:${b.color}"></div></div>
+      <span class="budget-val" style="color:${b.color}">${b.val}</span>
+    </div>
+  `).join('');
+
+  const kpiBoxes = cfg.kpis.map(k => `
+    <div class="kpi-box">
+      <div class="kpi-label">${k.l}</div>
+      <div class="kpi-val">${k.v}</div>
+    </div>
+  `).join('');
+
+  // Group by layer
+  const layers = {};
+  cards.forEach(c => {
+    const l = c.layer || 'General';
+    if (!layers[l]) layers[l] = [];
+    layers[l].push(c);
+  });
+
+  const layerColors = { 'Awareness':'rgba(7,149,152,0.1)','Consideration':'rgba(255,91,4,0.08)','Conversion':'rgba(7,149,152,0.15)','General':'rgba(255,255,255,0.03)' };
+  const layerText = { 'Awareness':'#079598','Consideration':'#FF5B04','Conversion':'#079598','General':'#5a7f82' };
+
+  let layerSections = '';
+  const order = ['Awareness','Consideration','Conversion','General'];
+  order.forEach(layer => {
+    if (!layers[layer]) return;
+    const cardsList = layers[layer].map(c => buildCard(c, phaseId)).join('');
+    layerSections += `
+      <div class="layer-section">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div class="layer-label" style="background:${layerColors[layer]};color:${layerText[layer]};border:1px solid ${layerText[layer]}33">
+            <span>${layer}</span>
+            <span style="font-size:10px;opacity:0.7">${layers[layer].length} محتوى</span>
+          </div>
+        </div>
+        <div class="cards-grid">${cardsList}
+          <button class="add-card-btn" onclick="openAddModal('${phaseId}','${layer}')">
+            <span style="font-size:18px;opacity:0.5">+</span> إضافة محتوى جديد
+          </button>
+        </div>
+      </div>
+    `;
+  });
+
+  if (!layerSections) {
+    layerSections = `<div class="cards-grid">
+      <button class="add-card-btn" onclick="openAddModal('${phaseId}','General')">
+        <span style="font-size:18px;opacity:0.5">+</span> إضافة أول محتوى لهذه الـ Phase
+      </button>
+    </div>`;
+  }
+
+  return `
+    <div class="phase-header-card" style="border-color:${cfg.color}22;box-shadow:0 0 0 1px ${cfg.color}11">
+      <div>
+        <div class="phase-name" style="color:${cfg.color}">${cfg.name}</div>
+        <div class="phase-sub">${cfg.sub}</div>
+        <div class="phase-badges">
+          <span class="badge badge-period">📅 ${cfg.period}</span>
+          <span class="badge badge-budget">💰 ${cfg.budget}</span>
+          <span class="badge badge-obj">🎯 ${cfg.obj}</span>
+        </div>
+      </div>
+      <div class="kpi-row">${kpiBoxes}</div>
+    </div>
+
+    <div class="budget-section">
+      <div class="section-title" style="margin-bottom:12px">توزيع الميزانية</div>
+      ${budgetBars}
+    </div>
+
+    ${layerSections}
+  `;
+}
+
+function buildCard(c, phaseId) {
+  const pClass = getPlatformClass(c.platform);
+  const mediaItems = (c.media||[]).map((m,i) => {
+    const url = typeof m === 'object' ? m.url : m;
+    const note = typeof m === 'object' ? (m.note||'') : '';
+    const preview = buildMediaPreview(url, '${phaseId}', '${c.id}', i);
+    return `
+    <div class="media-item" style="flex-direction:column;align-items:stretch;gap:5px">
+      ${preview}
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="media-item-icon">${getMediaIcon(url)}</span>
+        <div class="media-item-inner">
+          <a class="media-item-link" href="${url}" target="_blank" title="${url}">${shortUrl(url)}</a>
+        </div>
+        <span class="media-item-del" onclick="removeMedia('${phaseId}','${c.id}',${i})" title="حذف">✕</span>
+      </div>
+      <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${c.id}',${i},this.value)">${escHtml(note)}</textarea>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="content-card" id="card-${c.id}">
+      <div class="card-top">
+        <div>
+          <span class="card-platform-badge ${pClass}">${c.platform}</span>
+        </div>
+        <div class="card-actions">
+          <button class="icon-btn" onclick="toggleMedia('${c.id}')" title="إضافة لينك/فيديو">🔗</button>
+          <button class="icon-btn danger" onclick="deleteCard('${phaseId}','${c.id}')" title="حذف">✕</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <textarea class="card-type" rows="1" oninput="updateCard('${phaseId}','${c.id}','type',this.value);autoResize(this)" onload="autoResize(this)">${escHtml(c.type)}</textarea>
+        <textarea class="card-desc" rows="3" oninput="updateCard('${phaseId}','${c.id}','desc',this.value)">${escHtml(c.desc)}</textarea>
+      </div>
+      <div class="card-footer">
+        <input class="card-tag" value="${escHtml(c.tag||'')}" placeholder="tag / platform" oninput="updateCard('${phaseId}','${c.id}','tag',this.value)">
+      </div>
+      <div class="card-media" id="media-${c.id}">
+        <div class="media-input-row">
+          <input class="media-input" id="mi-${c.id}" placeholder="https://youtube.com/... أو أي لينك" />
+          <button class="media-btn" onclick="addMedia('${phaseId}','${c.id}')">+ إضافة</button>
+        </div>
+        <div class="media-input-row" style="margin-bottom:10px">
+          <input class="media-input" id="mn-${c.id}" placeholder="وصف الرابط أو الفيديو (اختياري)" style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl" />
+        </div>
+        <div class="media-items" id="ml-${c.id}">${mediaItems}</div>
+      </div>
+    </div>
+  `;
+}
+
+function escHtml(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── INTERACTIONS ─────────────────────────────────────────────────────────
+function switchPhase(id, btn) {
+  currentPhase = id;
+  document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.phase-tab').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleMedia(cardId) {
+  const el = document.getElementById('media-' + cardId);
+  el.classList.toggle('open');
+}
+
+function addMedia(phaseId, cardId) {
+  const urlInput = document.getElementById('mi-' + cardId);
+  const noteInput = document.getElementById('mn-' + cardId);
+  const url = urlInput.value.trim();
+  if (!url) return;
+  const note = noteInput ? noteInput.value.trim() : '';
+  const card = data[phaseId].find(c => c.id === cardId);
+  if (!card) return;
+  if (!card.media) card.media = [];
+  const mediaObj = { url, note };
+  card.media.push(mediaObj);
+  urlInput.value = '';
+  if (noteInput) noteInput.value = '';
+  // Re-render media list
+  const list = document.getElementById('ml-' + cardId);
+  const i = card.media.length - 1;
+  const div = document.createElement('div');
+  div.className = 'media-item';
+  div.style.cssText = 'flex-direction:column;align-items:stretch;gap:5px';
+  const prevHtml = buildMediaPreview(url, phaseId, cardId, i);
+  div.innerHTML = `
+    ${prevHtml}
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="media-item-icon">${getMediaIcon(url)}</span>
+      <div class="media-item-inner">
+        <a class="media-item-link" href="${url}" target="_blank">${shortUrl(url)}</a>
+      </div>
+      <span class="media-item-del" onclick="removeMedia('${phaseId}','${cardId}',${i})">✕</span>
+    </div>
+    <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${cardId}',${i},this.value)">${note}</textarea>
+  `;
+  list.appendChild(div);
+  showToast('تم إضافة اللينك ✓');
+  writePhase(phaseId);
+}
+
+function removeMedia(phaseId, cardId, idx) {
+  const card = data[phaseId].find(c => c.id === cardId);
+  if (!card) return;
+  card.media.splice(idx, 1);
+  const list = document.getElementById('ml-' + cardId);
+  list.innerHTML = card.media.map((m, i) => {
+    const url = typeof m === 'object' ? m.url : m;
+    const note = typeof m === 'object' ? (m.note||'') : '';
+    const prev = buildMediaPreview(url, phaseId, cardId, i);
+    return `
+    <div class="media-item" style="flex-direction:column;align-items:stretch;gap:5px">
+      ${prev}
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="media-item-icon">${getMediaIcon(url)}</span>
+        <div class="media-item-inner">
+          <a class="media-item-link" href="${url}" target="_blank">${shortUrl(url)}</a>
+        </div>
+        <span class="media-item-del" onclick="removeMedia('${phaseId}','${cardId}',${i})">✕</span>
+      </div>
+      <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${cardId}',${i},this.value)">${note}</textarea>
+    </div>`;
+  }).join('');
+  writePhase(phaseId);
+}
+
+function updateMediaNote(phaseId, cardId, idx, val) {
+  const card = (data[phaseId]||[]).find(c => c.id === cardId);
+  if (!card || !card.media[idx]) return;
+  if (typeof card.media[idx] === 'string') {
+    card.media[idx] = { url: card.media[idx], note: val };
+  } else {
+    card.media[idx].note = val;
+  }
+  // debounce save
+  clearTimeout(card._noteTimer);
+  card._noteTimer = setTimeout(() => writePhase(phaseId), 1500);
+}
+
+
+
+
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = el.scrollHeight + 'px';
+}
+
+// ─── ADD MODAL ───────────────────────────────────────────────────────────
+function openAddModal(phaseId, layer) {
+  if (phaseId) document.getElementById('add-phase').value = phaseId;
+  if (layer) document.getElementById('add-layer').value = layer;
+  document.getElementById('modal-add').classList.add('open');
+  document.getElementById('add-type').focus();
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+// ─── FIREBASE CONFIG ────────────────────────────────────────────────────
+const firebaseConfig = {
+  apiKey: "AIzaSyDQ_D-W0iLO075-P7xjahmWJ3av-f-6mck",
+  authDomain: "geely-watad-v1-ads-format.firebaseapp.com",
+  databaseURL: "https://geely-watad-v1-ads-format-default-rtdb.firebaseio.com",
+  projectId: "geely-watad-v1-ads-format",
+  storageBucket: "geely-watad-v1-ads-format.appspot.com",
+  messagingSenderId: "783598053028",
+  appId: "1:783598053028:web:geelywatad2026"
+};
+
+// ─── FIREBASE INIT ──────────────────────────────────────────────────────
+let db = null;
+let syncEnabled = false;
+let saveTimeout = null;
+
+function initFirebase() {
+  try {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.database();
+    syncEnabled = true;
+    setStatus('connecting');
+
+    // Load once on start only — no realtime listener
+    db.ref('geely_content_2026').once('value')
+      .then(snapshot => {
+        const val = snapshot.val();
+        if (val) {
+          Object.keys(val).forEach(k => { data[k] = val[k]; });
+          renderAll();
+          document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
+          const active = document.getElementById('panel-' + currentPhase);
+          if (active) active.classList.add('active');
+        }
+        setStatus('saved');
+      })
+      .catch(err => {
+        console.warn('Firebase error:', err);
+        setStatus('offline');
+      });
+
+  } catch(e) {
+    console.warn('Firebase init failed:', e);
+    syncEnabled = false;
+    setStatus('offline');
+  }
+}
+
+// Write a single phase directly — no listener will fire
+function writePhase(phaseId) {
+  if (!syncEnabled || !db) return;
+  setStatus('saving');
+  const phaseData = data[phaseId] || [];
+  db.ref('geely_content_2026/' + phaseId).set(phaseData)
+    .then(() => { setStatus('saved'); })
+    .catch(e => { setStatus('offline'); showToast('خطأ في الحفظ'); });
+}
+
+// Save all phases
+function saveData() {
+  if (!syncEnabled || !db) return;
+  setStatus('saving');
+  db.ref('geely_content_2026').set(data)
+    .then(() => { setStatus('saved'); showToast('تم الحفظ ✓'); })
+    .catch(e => { setStatus('offline'); });
+}
+
+// Auto-save text edits with debounce
+function autoSave() {
+  clearTimeout(saveTimeout);
+  setStatus('unsaved');
+  saveTimeout = setTimeout(() => saveData(), 2000);
+}
+
+function updateCard(phaseId, cardId, field, val) {
+  const card = (data[phaseId] || []).find(c => c.id === cardId);
+  if (card) card[field] = val;
+  autoSave();
+}
+
+// ─── ADD CARD ────────────────────────────────────────────────────────────
+function addCard() {
+  const phaseId = document.getElementById('add-phase').value;
+  const platform = document.getElementById('add-platform').value;
+  const layer = document.getElementById('add-layer').value;
+  const type = document.getElementById('add-type').value.trim();
+  const desc = document.getElementById('add-desc').value.trim();
+  const tag = document.getElementById('add-tag').value.trim();
+  const media = document.getElementById('add-media').value.trim();
+  if (!type) { document.getElementById('add-type').focus(); return; }
+  const card = { id: uid(), platform, layer, type, desc, tag, media: media ? [media] : [] };
+  if (!data[phaseId]) data[phaseId] = [];
+  data[phaseId].push(card);
+  closeModal('modal-add');
+  ['add-type','add-desc','add-tag','add-media'].forEach(id => document.getElementById(id).value = '');
+  if (phaseId === currentPhase) {
+    const panel = document.getElementById('panel-' + currentPhase);
+    if (panel) panel.innerHTML = buildPanel(currentPhase);
+  }
+  showToast('تمت الإضافة ✓');
+  writePhase(phaseId);
+}
+
+// ─── DELETE CARD ─────────────────────────────────────────────────────────
+function deleteCard(phaseId, cardId) {
+  if (!confirm('تحذف هذا المحتوى؟')) return;
+  data[phaseId] = (data[phaseId] || []).filter(c => c.id !== cardId);
+  const el = document.getElementById('card-' + cardId);
+  if (el) el.remove();
+  showToast('تم الحذف ✓');
+  writePhase(phaseId);
+}
+
+function setStatus(s) {
+  const el = document.getElementById('save-status');
+  const states = {
+    saved:      { text: '● synced', color: 'var(--green)' },
+    unsaved:    { text: '● unsaved', color: 'var(--amber)' },
+    saving:     { text: '● saving...', color: 'var(--amber)' },
+    connecting: { text: '● connecting...', color: 'var(--text2)' },
+    offline:    { text: '● offline', color: 'var(--red)' },
+  };
+  const st = states[s] || states.offline;
+  el.textContent = st.text;
+  el.style.color = st.color;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+document.getElementById('modal-add').addEventListener('click', function(e) {
+  if (e.target === this) closeModal('modal-add');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+  }
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────────
+renderAll();
+setStatus('connecting');
+initFirebase();
+</script>
+
+
+  <!-- WATAD FOOTER -->
+  <footer style="position:relative;z-index:1;margin-top:3rem;padding:1rem 2rem;border-top:1px solid rgba(7,149,152,0.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span style="font-size:11px;color:#5a7f82;font-family:'Tajawal',sans-serif;letter-spacing:1px">Prepared by Watad Agency · 2026 · Confidential</span>
+    <span style="font-size:12px;font-weight:900;color:#079598;font-family:'Tajawal',sans-serif;letter-spacing:6px">WATAD</span>
+  </footer>
+</body>
+</html>
