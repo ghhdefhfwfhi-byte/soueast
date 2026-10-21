@@ -966,10 +966,10 @@ main {
 <script>
 // ─── DATA ───────────────────────────────────────────────────────────────────
 const phaseConfig = {
-  '1': { name:'Phase 1 — Awareness (Pre-Opening)', sub:'تعريف أهل الدمام بـ SOUEAST قبل افتتاح المعرض — البراند، S06 و S09، و"قريباً في الدمام"', period:'Oct W3 – Oct W4 (TBC)', budget:'$7,000', obj:'Awareness — CPM', color:'#079598', kpis:[{l:'Impressions',v:'~1.0M'},{l:'Reach',v:'~330K'},{l:'Blended CPM',v:'~$7'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'$2,450'},{p:'Meta',pct:40,color:'#1877F2',val:'$2,800'},{p:'TikTok',pct:25,color:'#69c9d0',val:'$1,750'}] },
-  '2': { name:'Phase 2 — Teaser / Countdown', sub:'عدّ تنازلي للافتتاح — كشف تدريجي للمعرض ودعوة لحفل الافتتاح', period:'Oct W5 – Nov W1 (TBC)', budget:'$5,000', obj:'Awareness — CPM + Video Views', color:'#FF5B04', kpis:[{l:'Impressions',v:'~715K'},{l:'Reach',v:'~240K'},{l:'Blended CPM',v:'~$7'},{l:'Duration',v:'1 Week'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,750'},{p:'Meta',pct:40,color:'#1877F2',val:'$2,000'},{p:'TikTok',pct:25,color:'#69c9d0',val:'$1,250'}] },
-  '3': { name:'Phase 3 — Grand Opening', sub:'أسبوع الافتتاح — زيارة المعرض + حجز Test Drive', period:'Opening Week (TBC)', budget:'$4,000', obj:'Visit Location + Test Drive', color:'#079598', kpis:[{l:'CTA 1',v:'Test Drive'},{l:'CTA 2',v:'Visit'},{l:'CPL target',v:'$8–15'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'$1,800'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
-  '4': { name:'Phase 4 — Post-Opening (Test Drive)', sub:'بعد الافتتاح — استمرار جمع طلبات Test Drive و Retargeting لكل من تفاعل', period:'Nov W2 – Nov W4 (TBC)', budget:'$4,000', obj:'Leads — Test Drive', color:'#FF5B04', kpis:[{l:'CTA',v:'Test Drive'},{l:'CPL target',v:'$8–15'},{l:'Lead Form',v:'Native'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'$1,800'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'$1,400'},{p:'TikTok',pct:20,color:'#69c9d0',val:'$800'}] },
+  '1': { name:'Phase 1 — Awareness (Pre-Opening)', sub:'تعريف أهل الدمام بـ SOUEAST قبل افتتاح المعرض — البراند، S06 و S09، و"قريباً في الدمام"', period:'Oct W3 – Oct W4 (TBC)', obj:'Awareness — CPM', color:'#079598', kpis:[{l:'Impressions',v:'~1.0M'},{l:'Reach',v:'~330K'},{l:'Platforms',v:'Meta · Snap · TikTok'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'35%'},{p:'Meta',pct:40,color:'#1877F2',val:'40%'},{p:'TikTok',pct:25,color:'#69c9d0',val:'25%'}] },
+  '2': { name:'Phase 2 — Teaser / Countdown', sub:'عدّ تنازلي للافتتاح — كشف تدريجي للمعرض ودعوة لحفل الافتتاح', period:'Oct W5 – Nov W1 (TBC)', obj:'Awareness — CPM + Video Views', color:'#FF5B04', kpis:[{l:'Impressions',v:'~715K'},{l:'Reach',v:'~240K'},{l:'Platforms',v:'Meta · Snap · TikTok'},{l:'Duration',v:'1 Week'}], budgets:[{p:'Snapchat',pct:35,color:'#FFFC00',val:'35%'},{p:'Meta',pct:40,color:'#1877F2',val:'40%'},{p:'TikTok',pct:25,color:'#69c9d0',val:'25%'}] },
+  '3': { name:'Phase 3 — Grand Opening', sub:'أسبوع الافتتاح — زيارة المعرض + حجز Test Drive', period:'Opening Week (TBC)', obj:'Visit Location + Test Drive', color:'#079598', kpis:[{l:'CTA 1',v:'Test Drive'},{l:'CTA 2',v:'Visit'},{l:'Lead Form',v:'Native'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'45%'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'35%'},{p:'TikTok',pct:20,color:'#69c9d0',val:'20%'}] },
+  '4': { name:'Phase 4 — Post-Opening (Test Drive)', sub:'بعد الافتتاح — استمرار جمع طلبات Test Drive و Retargeting لكل من تفاعل', period:'Nov W2 – Nov W4 (TBC)', obj:'Leads — Test Drive', color:'#FF5B04', kpis:[{l:'CTA',v:'Test Drive'},{l:'Lead Form',v:'Native'},{l:'Retargeting',v:'On'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#1877F2',val:'45%'},{p:'Snapchat',pct:35,color:'#FFFC00',val:'35%'},{p:'TikTok',pct:20,color:'#69c9d0',val:'20%'}] },
 };
 
 const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','Snapchat':'plt-snap','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
@@ -1187,7 +1187,7 @@ function buildPanel(phaseId) {
         <div class="phase-sub">${cfg.sub}</div>
         <div class="phase-badges">
           <span class="badge badge-period">📅 ${cfg.period}</span>
-          <span class="badge badge-budget">💰 ${cfg.budget}</span>
+          
           <span class="badge badge-obj">🎯 ${cfg.obj}</span>
         </div>
       </div>
@@ -1195,7 +1195,7 @@ function buildPanel(phaseId) {
     </div>
 
     <div class="budget-section">
-      <div class="section-title" style="margin-bottom:12px">توزيع الميزانية</div>
+      <div class="section-title" style="margin-bottom:12px">توزيع المنصات</div>
       ${budgetBars}
     </div>
 
