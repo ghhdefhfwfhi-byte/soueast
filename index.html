@@ -4,677 +4,423 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SOUEAST × Watad — Dammam Showroom Content</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Michroma&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Michroma&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
-:root {
-  --black: #000000;
-  --ink: #111111;
-  --ink2: #4a4a4a;
-  --ink3: #8a8a8a;
-  --page: #F0F2F5;
-  --card: #FFFFFF;
-  --line: #E4E6EA;
-  --line2: #D0D3D8;
-  --orange: #FF6B1A;
-  --amber: #FFA726;
-  --red: #E5484D;
-  --green: #2DA44E;
-  --tiktok: #111;
-  --phase1: #FF6B1A; --phase2: #FFA726; --phase3: #FF6B1A; --phase4c: #FFA726;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Tajawal', 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--page); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
+:root{--black:#000;--ink:#111;--ink2:#3a3a3a;--ink3:#5c5c5c;--page:#F0F2F5;--card:#fff;--line:#E4E6EA;--line2:#D0D3D8;--orange:#FF6B1A;--amber:#FFA726;--tint:#FFF1E6;--red:#D93036}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Tajawal','Helvetica Neue',Arial,sans-serif;background:var(--page);color:var(--ink);min-height:100vh}
+button,input,select,textarea{font-family:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lat{font-family:'Helvetica Neue',Arial,sans-serif}
 
-/* NAV — black like SOUEAST Brand Hub sidebar */
-.topnav { position: sticky; top: 0; z-index: 100; background: var(--black); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
-.nav-logo { display: flex; align-items: center; gap: 14px; }
-.brand-wordmark { font-family: 'Michroma', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; letter-spacing: 6px; color: var(--orange); font-weight: 400; line-height: 1; }
-.nav-sep { width: 1px; height: 22px; background: #333; }
-.nav-title { font-size: 14px; font-weight: 500; color: #fff; }
-.nav-hub { font-size: 10px; font-weight: 700; background: #fff; color: #000; padding: 2px 7px; border-radius: 2px; letter-spacing: 1px; }
-.nav-meta { font-size: 12px; color: #aaa; font-family: 'Helvetica Neue', Arial, sans-serif; }
-.nav-actions { display: flex; gap: 8px; }
-.btn { font-family: 'Tajawal', sans-serif; font-size: 13px; font-weight: 500; padding: 7px 15px; border-radius: 4px; border: 1px solid var(--line2); background: #fff; color: var(--ink); cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 6px; }
-.topnav .btn { background: transparent; color: #fff; border-color: #444; }
-.btn:hover { border-color: var(--amber); color: var(--amber); }
-.btn-primary, .topnav .btn-primary { background: var(--amber); border-color: var(--amber); color: #000; font-weight: 700; }
-.btn-primary:hover, .topnav .btn-primary:hover { background: var(--orange); border-color: var(--orange); color: #000; }
+/* header */
+.top{position:sticky;top:0;z-index:50;background:#000;padding:12px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.wordmark{font-family:'Michroma',sans-serif;font-size:17px;letter-spacing:6px;color:var(--orange)}
+.sep{width:1px;height:22px;background:#333}
+.ttl{font-size:14px;color:#fff;font-weight:500}
+.sync{font-size:12px;color:#aaa}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{font-size:13px;font-weight:500;padding:8px 14px;border-radius:6px;border:1px solid var(--line2);background:#fff;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.btn:hover{border-color:var(--amber)}
+.btn.dark{background:transparent;color:#fff;border-color:#444}
+.btn.dark:hover{border-color:var(--amber);color:var(--amber)}
+.btn.pri{background:var(--amber);border-color:var(--amber);color:#000;font-weight:700}
+.btn.pri:hover{background:var(--orange);border-color:var(--orange)}
+.btn.blk{background:#000;border-color:#000;color:var(--amber);font-weight:700}
+.btn.danger:hover{border-color:var(--red);color:var(--red)}
 
-/* PHASE TABS */
-.phase-bar { position: relative; z-index: 1; padding: .75rem 2rem; display: flex; gap: 8px; flex-wrap: wrap; background: #fff; border-bottom: 1px solid var(--line); }
-.phase-tab { font-family: 'Tajawal', sans-serif; font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 4px; border: 1px solid var(--line2); background: #fff; color: var(--ink2); cursor: pointer; transition: all .2s; display: flex; align-items: center; gap: 7px; }
-.phase-dot { width: 7px; height: 7px; border-radius: 50%; }
-.phase-tab:hover { border-color: var(--amber); color: var(--ink); }
-.phase-tab.active { background: #000; border-color: #000; color: var(--amber); }
+/* layout */
+.wrap{max-width:1440px;margin:0 auto;padding:22px 28px;display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.side{flex:1 1 300px;max-width:350px;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;position:sticky;top:76px;max-height:calc(100vh - 96px);display:flex;flex-direction:column}
+.side-h{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.side-h strong{font-size:15px}
+.side-h span{font-size:12px;color:var(--ink3)}
+.side-body{overflow-y:auto}
+.ph-h{width:100%;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;background:#FAFAFB;border:none;border-top:1px solid var(--line);cursor:pointer;text-align:right}
+.ph-h .nm{font-size:14px;font-weight:800;color:var(--ink)}
+.ph-h .ct{font-size:12px;color:var(--ink3);display:flex;gap:6px;align-items:center}
+.chev{transition:transform .2s}
+.ph.closed .chev{transform:rotate(90deg)}
+.ph.closed .ph-items{display:none}
+.it{width:100%;padding:10px 16px;display:flex;gap:10px;align-items:center;border:none;border-top:1px solid #F0F2F5;background:#fff;cursor:pointer;text-align:right;border-right:3px solid transparent}
+.it:hover{background:#FAFAFB}
+.it.on{background:var(--tint);border-right-color:var(--orange)}
+.it .n{font-size:12px;color:var(--ink3);width:20px;flex-shrink:0}
+.it .th{width:34px;height:52px;border-radius:4px;background:#1a1a1a;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.it .tx{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.it .t1{font-size:13px;font-weight:700;line-height:1.35;color:var(--ink);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.it .t2{font-size:11px;color:var(--ink3)}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.st-new{background:#C4C8CE}.st-shoot{background:var(--amber)}.st-done{background:#1F8A3E}
+.add-in{width:100%;padding:10px 16px;border:none;border-top:1px dashed var(--line2);background:#fff;color:var(--ink3);font-size:13px;cursor:pointer;text-align:right}
+.add-in:hover{color:#000;background:#FAFAFB}
 
-main { position: relative; z-index: 1; max-width: 1300px; margin: 0 auto; padding: 2rem; }
+.main{flex:999 1 640px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.phase-strip{background:#000;color:#fff;border-radius:8px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;border-bottom:3px solid var(--orange)}
+.phase-strip h2{font-size:19px;font-weight:800}
+.phase-strip p{font-size:13px;color:#bbb;margin-top:3px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{font-size:12px;padding:4px 10px;border-radius:4px;border:1px solid #333;color:#ddd}
+.pill.o{border-color:rgba(255,167,38,.5);color:var(--amber)}
+.split{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#ccc}
+.split b{color:#fff}
 
-/* PHASE HEADER */
-.phase-header-card { background: #000; color: #fff; border-radius: 6px; padding: 1.6rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; border-bottom: 3px solid var(--orange); }
-.phase-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-.phase-sub { font-size: 13px; color: #bbb; }
-.phase-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-.badge { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 4px; border: 1px solid; }
-.badge-period { background: rgba(255,255,255,.06); border-color: #333; color: #ddd; }
-.badge-obj { background: rgba(255,167,38,.12); border-color: rgba(255,167,38,.45); color: var(--amber); }
-.kpi-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.kpi-box { background: #111; border: 1px solid #2a2a2a; border-radius: 4px; padding: 10px 16px; text-align: center; min-width: 96px; }
-.kpi-label { font-size: 10px; color: #999; margin-bottom: 4px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif; }
-.kpi-val { font-size: 17px; font-weight: 700; color: #fff; }
+.stage{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-wrap:wrap;gap:24px}
+.player-col{flex:0 0 340px;max-width:100%;display:flex;flex-direction:column;gap:10px}
+.player{width:340px;max-width:100%;aspect-ratio:9/16;background:#111;border-radius:10px;overflow:hidden;position:relative}
+.player iframe{width:100%;height:100%;border:0;display:block;background:#111}
+.player .empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#bbb;font-size:13px;text-align:center;padding:20px}
+.refs{display:flex;gap:6px;flex-wrap:wrap}
+.ref-tab{flex:1 1 90px;font-size:12px;padding:8px 6px;border-radius:6px;border:1px solid var(--line2);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--ink)}
+.ref-tab b{font-size:12px}
+.ref-tab span{font-size:11px;color:var(--ink3)}
+.ref-tab.on{background:#000;border-color:#000;color:var(--amber)}
+.ref-tab.on span{color:#ccc}
+.ref-links{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.ref-links a{color:#B4410C}
 
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-.section-title { font-size: 11px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: 2px; }
+.info{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.bdg{font-size:12px;font-weight:700;padding:4px 10px;border-radius:4px}
+.b-ph{background:#000;color:var(--amber)}
+.b-meta{background:#E8F0FE;color:#1a56c4}.b-snap{background:#FFFC00;color:#000}.b-tt{background:#111;color:#fff}.b-all{background:var(--tint);color:#9A3412}
+.b-fmt{background:#EEF0F3;color:#333;font-weight:500}
+.e-title{font-size:24px;font-weight:800;line-height:1.35;border:1px solid transparent;border-radius:6px;padding:4px 6px;margin:-4px -6px;background:transparent;width:calc(100% + 12px);color:var(--ink)}
+.e-desc{font-size:15px;line-height:1.8;color:var(--ink2);border:1px solid transparent;border-radius:6px;padding:4px 6px;margin:-4px -6px;background:transparent;width:calc(100% + 12px);resize:vertical;min-height:70px}
+.e-title:hover,.e-desc:hover{border-color:var(--line)}
+.e-title:focus,.e-desc:focus{outline:none;border-color:var(--amber);background:#fff}
+.box{background:#FAFAFB;border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.box label{font-size:12px;font-weight:700;color:var(--ink3)}
+.box textarea,.box input{border:1px solid var(--line);border-radius:4px;background:#fff;padding:8px 10px;font-size:14px;line-height:1.7;color:var(--ink);width:100%}
+.box textarea{min-height:64px;resize:vertical}
+.box textarea:focus,.box input:focus,select:focus{outline:none;border-color:var(--amber)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row label{font-size:13px;color:var(--ink3)}
+select{font-size:13px;padding:8px 12px;border:1px solid var(--line2);border-radius:6px;background:#fff}
+.add-ref{display:flex;gap:8px;flex-wrap:wrap}
+.add-ref input{flex:1 1 220px}
+.nav{margin-top:auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:6px}
+.nav .btn{padding:12px 18px;font-size:14px}
+.counter{font-size:13px;color:var(--ink3);align-self:center}
 
-.layer-section { margin-bottom: 2rem; }
-.layer-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 4px; margin-bottom: 12px; }
+/* modal */
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.modal{background:#fff;border-radius:8px;border-top:4px solid var(--orange);width:480px;max-width:100%;padding:22px;max-height:90vh;overflow-y:auto}
+.modal h3{font-size:17px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.fg{margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
+.fg label{font-size:12px;font-weight:700;color:var(--ink3)}
+.fg input,.fg select,.fg textarea{width:100%;font-size:14px;padding:9px 12px;border:1px solid var(--line2);border-radius:6px}
+.fg textarea{min-height:70px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.m-act{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:#000;color:var(--amber);font-weight:700;font-size:13px;padding:10px 20px;border-radius:6px;z-index:200;transition:transform .3s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+footer{background:#000;margin-top:30px;padding:16px 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center}
+footer span{font-size:11px;color:#9a9a9a}
 
-/* CARDS */
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
-.content-card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; transition: border-color .2s, box-shadow .2s; position: relative; }
-.content-card:hover { border-color: var(--amber); box-shadow: 0 4px 14px rgba(0,0,0,.06); }
-.card-top { padding: 12px 16px 10px; border-bottom: 1px solid var(--line); display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
-.card-platform-badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: .5px; }
-.card-body { padding: 12px 16px; }
-.card-type { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.4; outline: none; border: none; background: transparent; width: 100%; font-family: 'Tajawal', sans-serif; resize: none; }
-.card-desc { font-size: 13px; color: var(--ink2); line-height: 1.7; outline: none; border: none; background: transparent; width: 100%; resize: none; font-family: 'Tajawal', sans-serif; min-height: 50px; }
-.card-footer { padding: 10px 16px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-.card-tag { font-size: 11px; color: var(--ink3); font-family: 'Helvetica Neue', Arial, sans-serif; outline: none; background: transparent; border: none; width: 100%; }
-.card-actions { display: flex; gap: 6px; }
-.icon-btn { width: 28px; height: 28px; border-radius: 4px; border: 1px solid var(--line2); background: #fff; color: var(--ink2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all .15s; }
-.icon-btn:hover { border-color: var(--amber); color: #000; }
-.icon-btn.danger:hover { background: rgba(229,72,77,.08); color: var(--red); border-color: var(--red); }
-
-/* MEDIA */
-.card-media { padding: 10px 16px; border-top: 1px solid var(--line); display: none; background: #FAFAFB; }
-.card-media.open { display: block; }
-.media-input-row { display: flex; gap: 8px; margin-bottom: 8px; }
-.media-input { flex: 1; background: #fff; border: 1px solid var(--line2); border-radius: 4px; padding: 7px 10px; color: var(--ink); font-size: 12px; font-family: 'Helvetica Neue', Arial, sans-serif; outline: none; }
-.media-input:focus { border-color: var(--amber); }
-.media-input::placeholder { color: var(--ink3); }
-.media-btn { font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 4px; border: 1px solid var(--amber); background: var(--amber); color: #000; cursor: pointer; white-space: nowrap; }
-.media-btn:hover { background: var(--orange); border-color: var(--orange); }
-.media-items { display: flex; flex-direction: column; gap: 8px; }
-.media-item { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; }
-.media-item-icon { font-size: 14px; flex-shrink: 0; }
-.media-item-link { font-size: 11px; color: var(--orange); font-family: 'Helvetica Neue', Arial, sans-serif; text-decoration: none; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.media-item-link:hover { text-decoration: underline; }
-.media-item-del { font-size: 11px; color: var(--ink3); cursor: pointer; flex-shrink: 0; padding: 2px 4px; }
-.media-item-del:hover { color: var(--red); }
-.media-item-note { font-size: 13px; color: var(--ink2); font-family: 'Tajawal', sans-serif; padding: 8px 10px; background: #FAFAFB; border-radius: 4px; border: 1px solid var(--line); outline: none; width: 100%; margin-top: 6px; direction: rtl; min-height: 60px; resize: vertical; line-height: 1.6; }
-.media-item-note:focus { border-color: var(--amber); color: var(--ink); background: #fff; }
-.media-item-note::placeholder { color: var(--ink3); }
-.media-item-inner { flex: 1; min-width: 0; }
-.media-preview { width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 6px; background: #000; position: relative; cursor: pointer; }
-.media-preview img { width: 100%; height: 140px; object-fit: cover; display: block; }
-.media-preview-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; pointer-events: none; }
-.media-preview-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,.8)); padding: 16px 8px 6px; font-size: 10px; color: rgba(255,255,255,.8); letter-spacing: 1px; text-transform: uppercase; }
-.media-preview-img-only { width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 6px; cursor: pointer; }
-.media-preview-img-only img { width: 100%; max-height: 180px; object-fit: cover; display: block; }
-.ig-tile { background: #000; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-radius: 4px; margin-bottom: 6px; cursor: pointer; border-right: 3px solid var(--orange); }
-.ig-tile:hover { background: #1a1a1a; }
-.ig-tile .ig-brand { font-size: 12px; color: #fff; font-weight: 700; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: .5px; }
-.ig-tile .ig-cta { font-size: 11px; color: var(--amber); font-weight: 700; }
-
-.add-card-btn { background: transparent; border: 1px dashed var(--line2); border-radius: 6px; padding: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; color: var(--ink3); font-size: 13px; font-family: 'Tajawal', sans-serif; transition: all .2s; width: 100%; min-height: 120px; }
-.add-card-btn:hover { border-color: var(--amber); color: #000; background: #fff; }
-
-/* MODAL */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(3px); }
-.modal-overlay.open { display: flex; }
-.modal { background: #fff; border-radius: 6px; border-top: 4px solid var(--orange); width: 480px; max-width: 95vw; padding: 1.5rem; position: relative; animation: modal-in .2s ease; max-height: 90vh; overflow-y: auto; }
-@keyframes modal-in { from { opacity: 0; transform: scale(.96) translateY(8px); } to { opacity: 1; transform: none; } }
-.modal-title { font-size: 16px; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between; }
-.modal-close { width: 28px; height: 28px; border-radius: 4px; border: 1px solid var(--line2); background: #fff; color: var(--ink2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-.modal-close:hover { border-color: var(--red); color: var(--red); }
-.form-group { margin-bottom: 14px; }
-.form-label { font-size: 11px; color: var(--ink3); margin-bottom: 6px; display: block; font-weight: 700; letter-spacing: 1px; }
-.form-input, .form-select, .form-textarea { width: 100%; background: #fff; border: 1px solid var(--line2); border-radius: 4px; padding: 9px 12px; color: var(--ink); font-size: 13px; font-family: 'Tajawal', sans-serif; outline: none; }
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--amber); }
-.form-textarea { resize: vertical; min-height: 70px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 1.5rem; }
-
-/* PLATFORM SPLIT */
-.budget-section { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; margin-bottom: 1.5rem; }
-.budget-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.budget-row:last-child { margin-bottom: 0; }
-.budget-platform { font-size: 12px; color: var(--ink2); width: 70px; flex-shrink: 0; text-align: right; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 500; }
-.budget-track { flex: 1; height: 6px; background: #EEF0F3; border-radius: 3px; overflow: hidden; }
-.budget-fill { height: 100%; border-radius: 3px; transition: width .5s ease; }
-.budget-val { font-size: 12px; font-weight: 700; width: 45px; text-align: left; flex-shrink: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
-
-.phase-panel { display: none; }
-.phase-panel.active { display: block; animation: fadein .25s ease; }
-@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: #000; border-radius: 4px; padding: 10px 20px; font-size: 13px; color: var(--amber); z-index: 2000; transition: transform .3s ease; font-weight: 700; }
-.toast.show { transform: translateX(-50%) translateY(0); }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-thumb { background: #c8c8c8; border-radius: 3px; }
-
-.plt-meta { background: #E8F0FE; color: #1a56c4; }
-.plt-tiktok { background: #111; color: #fff; }
-.plt-snap { background: #FFFC00; color: #000; }
-.plt-yt { background: #FDECEC; color: #c62828; }
-.plt-google { background: #E8F0FE; color: #1a56c4; }
-.plt-all { background: #FFF1E6; color: var(--orange); }
-
-.site-footer { position: relative; z-index: 1; margin-top: 3rem; padding: 1.1rem 2rem; background: #000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.site-footer .f-note { font-size: 11px; color: #888; letter-spacing: .5px; }
-
-@media (max-width: 640px) {
-  main { padding: 1rem; }
-  .phase-header-card { flex-direction: column; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .topnav { padding: 0 1rem; height: auto; min-height: 64px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
-  .nav-title { display: none; }
-  .phase-bar { padding: .75rem 1rem; }
+@media (max-width:760px){
+  .top{padding:10px 14px}.ttl,.sep{display:none}
+  .wrap{padding:14px}
+  .side{position:static;max-width:none;max-height:none}
+  .side-body{max-height:300px}
+  .player-col{flex:1 1 100%;align-items:center}
+  .player{width:100%;max-width:360px}
+  .two{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="topnav">
-  <div class="nav-logo">
-    <span class="brand-wordmark">SOUEAST</span><span class="nav-sep"></span>
-    <span class="nav-title">Dammam Showroom — Content Plan</span> <span class="nav-hub">2026</span>
+<header class="top">
+  <div class="brand">
+    <span class="wordmark">SOUEAST</span><span class="sep"></span>
+    <span class="ttl">Dammam Showroom — Content Plan</span>
   </div>
-  <div class="nav-meta" id="save-status">ready</div>
-  <div class="nav-actions">
-    <button class="btn" onclick="openAddModal()">+ إضافة محتوى</button>
-    <button class="btn btn-primary" onclick="saveData()">💾 حفظ</button>
+  <span class="sync lat" id="sync">connecting…</span>
+  <div class="actions">
+    <button class="btn dark" onclick="openAdd()">+ فكرة جديدة</button>
+    <button class="btn pri" onclick="saveAll(true)">حفظ</button>
   </div>
-</nav>
+</header>
 
-<!-- PHASE TABS -->
-<div class="phase-bar">
-  <button class="phase-tab active" data-phase="1" onclick="switchPhase('1', this)">
-    <span class="phase-dot" style="background:var(--phase1)"></span> Phase 1 — Awareness
-  </button>
-  <button class="phase-tab" data-phase="2" onclick="switchPhase('2', this)">
-    <span class="phase-dot" style="background:var(--phase2)"></span> Phase 2 — Teaser
-  </button>
-  <button class="phase-tab" data-phase="3" onclick="switchPhase('3', this)">
-    <span class="phase-dot" style="background:var(--phase3)"></span> Phase 3 — Grand Opening
-  </button>
-  <button class="phase-tab" data-phase="4" onclick="switchPhase('4', this)">
-    <span class="phase-dot" style="background:var(--phase4c)"></span> Phase 4 — Post-Opening
-  </button>
+<div class="wrap">
+  <aside class="side" aria-label="قائمة المحتوى">
+    <div class="side-h"><strong>قائمة المحتوى</strong><span id="side-count"></span></div>
+    <div class="side-body" id="side"></div>
+  </aside>
+  <main class="main" id="main"></main>
 </div>
 
-<main id="main-content"></main>
-
-<!-- ADD MODAL -->
-<div class="modal-overlay" id="modal-add">
+<div class="ov" id="ov-add" role="dialog" aria-modal="true" aria-labelledby="add-h">
   <div class="modal">
-    <div class="modal-title">
-      إضافة محتوى جديد
-      <button class="modal-close" onclick="closeModal('modal-add')">✕</button>
+    <h3 id="add-h">فكرة جديدة <button class="btn" onclick="closeAdd()" aria-label="إغلاق">✕</button></h3>
+    <div class="two">
+      <div class="fg"><label for="a-ph">المرحلة</label><select id="a-ph"></select></div>
+      <div class="fg"><label for="a-pl">المنصة</label><select id="a-pl"><option>Snapchat</option><option>Meta</option><option>TikTok</option><option>All Platforms</option></select></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">PHASE</label>
-      <select class="form-select" id="add-phase">
-        <option value="1">Phase 1 — Awareness</option>
-        <option value="2">Phase 2 — Teaser / Countdown</option>
-        <option value="3">Phase 3 — Grand Opening</option>
-        <option value="4">Phase 4 — Post-Opening</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">المنصة</label>
-        <select class="form-select" id="add-platform">
-          <option>Meta</option>
-          <option>Snapchat</option>
-          <option>TikTok</option>
-          <option>All Platforms</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">الطبقة</label>
-        <select class="form-select" id="add-layer">
-          <option>Awareness</option>
-          <option>Consideration</option>
-          <option>Conversion</option>
-          <option>General</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">نوع المحتوى</label>
-      <input class="form-input" id="add-type" placeholder="مثال: Short Video 15s — Lifestyle" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">الوصف</label>
-      <textarea class="form-textarea" id="add-desc" placeholder="وصف الفكرة والهدف منها..."></textarea>
-    </div>
-    <div class="form-group">
-      <label class="form-label">التاق / المنصة المستهدفة</label>
-      <input class="form-input" id="add-tag" placeholder="Snapchat + Meta Reels — 10s" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">لينك أو فيديو (اختياري)</label>
-      <input class="form-input" id="add-media" placeholder="https://..." />
-    </div>
-    <div class="modal-actions">
-      <button class="btn" onclick="closeModal('modal-add')">إلغاء</button>
-      <button class="btn btn-primary" onclick="addCard()">+ إضافة</button>
-    </div>
+    <div class="fg"><label for="a-t">عنوان الفكرة</label><input id="a-t" placeholder="مثال: Reels 15s — تعريف بالبراند"></div>
+    <div class="fg"><label for="a-d">الوصف</label><textarea id="a-d" placeholder="شنو الفكرة وشلون تتصور"></textarea></div>
+    <div class="fg"><label for="a-tag">المنصة / المقاس</label><input id="a-tag" placeholder="Snapchat — 9:16 · 10s"></div>
+    <div class="fg"><label for="a-u">لينك رفرنس (إنستغرام / تيك توك)</label><input id="a-u" class="lat" dir="ltr" placeholder="https://www.instagram.com/reel/..."></div>
+    <div class="m-act"><button class="btn" onclick="closeAdd()">إلغاء</button><button class="btn pri" onclick="addIdea()">+ إضافة</button></div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
+<footer><span>Prepared by Watad Agency for SOUEAST Saudi Arabia · 2026 · Confidential</span><span class="wordmark" style="font-size:13px">SOUEAST</span></footer>
 
-<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-const phaseConfig = {
-  '1': { name:'Phase 1 — Awareness (Pre-Opening)', sub:'تعريف أهل الدمام بـ SOUEAST قبل افتتاح المعرض — البراند، S06 و S09، و"قريباً في الدمام"', period:'Oct W3 – Oct W4 (TBC)', obj:'Awareness — CPM', color:'#FFFFFF', kpis:[{l:'Impressions',v:'~1.0M'},{l:'Reach',v:'~330K'},{l:'Platforms',v:'Meta · Snap · TikTok'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Snapchat',pct:35,color:'#FFA726',val:'35%'},{p:'Meta',pct:40,color:'#000000',val:'40%'},{p:'TikTok',pct:25,color:'#FF6B1A',val:'25%'}] },
-  '2': { name:'Phase 2 — Teaser / Countdown', sub:'عدّ تنازلي للافتتاح — كشف تدريجي للمعرض ودعوة لحفل الافتتاح', period:'Oct W5 – Nov W1 (TBC)', obj:'Awareness — CPM + Video Views', color:'#FFFFFF', kpis:[{l:'Impressions',v:'~715K'},{l:'Reach',v:'~240K'},{l:'Platforms',v:'Meta · Snap · TikTok'},{l:'Duration',v:'1 Week'}], budgets:[{p:'Snapchat',pct:35,color:'#FFA726',val:'35%'},{p:'Meta',pct:40,color:'#000000',val:'40%'},{p:'TikTok',pct:25,color:'#FF6B1A',val:'25%'}] },
-  '3': { name:'Phase 3 — Grand Opening', sub:'أسبوع الافتتاح — زيارة المعرض + حجز Test Drive', period:'Opening Week (TBC)', obj:'Visit Location + Test Drive', color:'#FFFFFF', kpis:[{l:'CTA 1',v:'Test Drive'},{l:'CTA 2',v:'Visit'},{l:'Lead Form',v:'Native'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#000000',val:'45%'},{p:'Snapchat',pct:35,color:'#FFA726',val:'35%'},{p:'TikTok',pct:20,color:'#FF6B1A',val:'20%'}] },
-  '4': { name:'Phase 4 — Post-Opening (Test Drive)', sub:'بعد الافتتاح — استمرار جمع طلبات Test Drive و Retargeting لكل من تفاعل', period:'Nov W2 – Nov W4 (TBC)', obj:'Leads — Test Drive', color:'#FFFFFF', kpis:[{l:'CTA',v:'Test Drive'},{l:'Lead Form',v:'Native'},{l:'Retargeting',v:'On'},{l:'Geo',v:'Dammam'}], budgets:[{p:'Meta',pct:45,color:'#000000',val:'45%'},{p:'Snapchat',pct:35,color:'#FFA726',val:'35%'},{p:'TikTok',pct:20,color:'#FF6B1A',val:'20%'}] },
-};
+// ─── PHASES ────────────────────────────────────────────────────────────
+const PHASES = [
+  { id:'1', name:'Phase 1 — Awareness', full:'Phase 1 — Awareness (Pre-Opening)', sub:'تعريف أهل الدمام بـ SOUEAST قبل افتتاح المعرض — البراند، S06 و S09، و"قريباً في الدمام"', period:'Oct W3 – Oct W4 (TBC)', obj:'Awareness — CPM', split:'Snapchat 35% · Meta 40% · TikTok 25%' },
+  { id:'2', name:'Phase 2 — Teaser', full:'Phase 2 — Teaser / Countdown', sub:'عدّ تنازلي للافتتاح — كشف تدريجي للمعرض ودعوة لحفل الافتتاح', period:'Oct W5 – Nov W1 (TBC)', obj:'Awareness — Video Views', split:'Snapchat 35% · Meta 40% · TikTok 25%' },
+  { id:'3', name:'Phase 3 — Grand Opening', full:'Phase 3 — Grand Opening', sub:'أسبوع الافتتاح — زيارة المعرض + حجز Test Drive', period:'Opening Week (TBC)', obj:'Visit Location + Test Drive', split:'Meta 45% · Snapchat 35% · TikTok 20%' },
+  { id:'4', name:'Phase 4 — Post-Opening', full:'Phase 4 — Post-Opening (Test Drive)', sub:'بعد الافتتاح — استمرار طلبات Test Drive و Retargeting لكل من تفاعل', period:'Nov W2 – Nov W4 (TBC)', obj:'Leads — Test Drive', split:'Meta 45% · Snapchat 35% · TikTok 20%' },
+];
 
-const platformClass = { 'Meta':'plt-meta','TikTok':'plt-tiktok','Snapchat':'plt-snap','YouTube':'plt-yt','Google':'plt-google','All Platforms':'plt-all' };
-
-const IG='https://www.instagram.com';
+// ─── REFERENCES ────────────────────────────────────────────────────────
+const IG='https://www.instagram.com', TT='https://www.tiktok.com';
 const R = {
-  mbComing:{url:IG+'/mercedesbenzksa/reel/DYhNpmotL-5/', note:'Mercedes-Benz KSA — 101K مشاهدة. "قوة استثنائية في طريقها إليكم… وصوتها يسبق حضورها" — تيزر "قريباً" بالصوت قبل الصورة. نفس الفكرة لـ "SOUEAST قريباً في الدمام".'},
-  lexusTeaser:{url:IG+'/lexusksa/reel/Dd89VapAoIz/', note:'Lexus KSA — 1M مشاهدة (الأعلى بحسابهم). تيزر قصير جداً بجملة وحدة "بُعدٌ آخر للإبداع" — مثال على Hook بسيط بدون معلومات كثيرة.'},
-  bmw5:{url:IG+'/bmwsaudiarabia/reel/Da73b94jltf/', note:'BMW Saudi Arabia — 1.9M (الأعلى بحسابهم). تصميم + تقنية + متعة قيادة بكابشن عربي واضح. رفرنس لـ Reels تعريف بالبراند.'},
-  audiGreat:{url:IG+'/audi/reel/DdoJxrcltZG/', note:'Audi — 3.8M. "What’s the secret to greatness?" — فيديو براند قصة بدون عرض أسعار. رفرنس لنبرة البراند.'},
-  bmwX7:{url:IG+'/bmwsaudiarabia/reel/DanQPyht5BT/', note:'BMW Saudi Arabia — 1.5M. X7 والتفاصيل كـ "الحكاية كاملة" — SUV كبير مناسب لزاوية S09 العائلية، وينتهي بدعوة لزيارة المعرض.'},
-  bmwI5:{url:IG+'/bmw/reel/DdwaonGk6AX/', note:'BMW — 2.6M. "From parts to presence in seconds" — مونتاج سريع يجمع السيارة قطعة قطعة. Hook قوي لأول ثانيتين.'},
-  audiNight:{url:IG+'/audi/reel/DeW0vkuDcUg/', note:'Audi — 12.8M (الأنجح بكل اللي سحبتهم). RS 5 بتصوير ليلي مستوحى من سماء سنغافورة — بالضبط فكرة التصوير الليلي والإضاءة بلون البراند بالدمام.'},
-  bmwLight:{url:IG+'/bmw/reel/DeEKFNeCcAv/', note:'BMW — 2.1M. Welcome light والإضاءة قبل لا تبدأ الرحلة — لقطات ليلية للإضاءة الأمامية والخلفية.'},
-  bmwTwo:{url:IG+'/bmwsaudiarabia/reel/DZfKi65D0fL/', note:'BMW Saudi Arabia — 1.4M. "أيقونتان. حضور لا يُخطئ" — X5 M و X6 M بنفس الفيديو. نفس فكرة S06 vs S09.'},
-  bmwDetail:{url:IG+'/bmw/reel/Dd8b7cXjjQa/', note:'BMW — 2.2M. "Comment which detail caught your eye" — CTA للكومنت يرفع التفاعل. نطبقه: "S06 لو S09؟ اكتب بالكومنت".'},
-  mbDokhi:{url:IG+'/mercedesbenzksa/reel/DY2fRkFkvnj/', note:'Mercedes-Benz KSA مع محمد الدوخي — 87K. وجه سعودي معروف + نبرة محلية. فكرة: كرييتر من الشرقية.'},
-  mbMirage:{url:IG+'/mercedesbenzksa/reel/Dac8UOWCBQK/', note:'Mercedes-Benz KSA — 200K (الأعلى بحسابهم). G 63 "سراب" مستوحى من الصحراء — ربط السيارة بالبيئة السعودية.'},
-  porscheSketch:{url:IG+'/porsche/reel/DdwTr8wKlTU/', note:'Porsche — 4.3M. رسّام يرسم السيارة (#PorscheMoment) — محتوى كرييتر بسيط ورخيص ويجيب مشاهدات عالية.'},
-  bmwShape:{url:IG+'/bmw/reel/DeL4qFBj6Jn/', note:'BMW — 2.3M. "Something expressive is taking shape" — تيزر كشف تدريجي قبل الإطلاق.'},
-  bmwMillion:{url:IG+'/bmw/reel/Dd_p30MkYPY/', note:'BMW — 8M (الأعلى بحسابهم). "999,999 came before it" — قصة + ترقب للحظة الكشف. رفرنس للـ Partial Reveal.'},
-  porscheDetail:{url:IG+'/porsche/reel/Db53IowI10b/', note:'Porsche — 3.1M. "The art of getting the details right" — لقطات قريبة للتفاصيل بدون كشف كامل.'},
-  lexusEvent:{url:IG+'/lexusksa/reel/Dd6ODuUFQo3/', note:'Lexus KSA — 354K. أجواء أمسية الكشف عن ES 2026 بمركز لكزس عبداللطيف جميل (طريق المدينة) — رفرنس مباشر لتغطية حفل افتتاح بمعرض بالسعودية.'},
-  bmwHira:{url:IG+'/bmwsaudiarabia/reel/DZZfjb4DAJt/', note:'BMW Saudi Arabia — 378K. "اكتشف صالة عرض BMW الجديدة كلياً في حراء" — أقرب رفرنس لإعلان افتتاح معرض جديد بالسعودية.'},
-  bmwHira2:{url:IG+'/bmwsaudiarabia/reel/DZ2QGF5NtLX/', note:'BMW Saudi Arabia — 324K. "اكتشفوا وجهتنا الجديدة في حراء، جدة" — جولة بالمعرض الجديد والخدمات.'},
-  bmw7:{url:IG+'/bmwsaudiarabia/reel/DdOnZX-tOow/', note:'BMW Saudi Arabia — 196K. بلهجة سعودية "مو مجرد سيارة فاخرة.. هي تجربة متكاملة" — نبرة قريبة مناسبة لإعلانات Test Drive.'},
-  audiTour:{url:IG+'/audi/reel/Db5ZDaHgCTn/', note:'Audi — 12.1M. ملخص فعالية (Summer Tour) "One highlight after another" — رفرنس لريكاب يوم الافتتاح.'},
-  bmw320:{url:IG+'/bmw/reel/DeBlWH9CUCd/', note:'BMW — 2.7M. "sporty, modern and timeless" — موديل واحد بلقطات نظيفة. مناسب لـ Retargeting بموديل واحد.'},
-  porscheCommunity:{url:IG+'/porsche/reel/DcypBtqB_BK/', note:'Porsche — 2.4M. "Nobody needs a sportscar. We just end up loving them anyway" — محتوى مجتمع وملاك، رفرنس لـ UGC العملاء.'},
+  mbComing:{url:IG+'/mercedesbenzksa/reel/DYhNpmotL-5/', views:'101K', note:'"قوة استثنائية في طريقها إليكم… وصوتها يسبق حضورها" — تيزر بالصوت قبل الصورة. نفس الفكرة لـ "SOUEAST قريباً في الدمام".'},
+  lexusTeaser:{url:IG+'/lexusksa/reel/Dd89VapAoIz/', views:'1M', note:'الأعلى بحساب Lexus KSA. تيزر قصير بجملة وحدة "بُعدٌ آخر للإبداع" — Hook بسيط بدون معلومات كثيرة.'},
+  lynkSoon:{url:IG+'/lynkco/reel/Ddb0HcaudU_/', views:'35.9K', note:'Lynk & Co (صيني): "Something is coming" — تيزر قبل الإطلاق بدون كشف السيارة.'},
+  bmw5:{url:IG+'/bmwsaudiarabia/reel/Da73b94jltf/', views:'1.9M', note:'الأعلى بحساب BMW السعودية. تصميم + تقنية + متعة قيادة بكابشن عربي واضح.'},
+  audiGreat:{url:IG+'/audi/reel/DdoJxrcltZG/', views:'3.8M', note:'"What’s the secret to greatness?" — فيديو براند قصة بدون أسعار.'},
+  xpeng:{url:IG+'/xpeng_global/reel/DQtg8xjDPfd/', views:'1.7M', note:'XPENG (صيني): "Transcend the boundary between tradition and the future" — براند فيلم صيني بلمسة فخامة.'},
+  bmwX7:{url:IG+'/bmwsaudiarabia/reel/DanQPyht5BT/', views:'1.5M', note:'X7 والتفاصيل كـ "الحكاية كاملة" — SUV كبير يناسب زاوية S09 العائلية، وينتهي بدعوة لزيارة المعرض.'},
+  bmwI5:{url:IG+'/bmw/reel/DdwaonGk6AX/', views:'2.6M', note:'"From parts to presence in seconds" — مونتاج سريع يجمع السيارة قطعة قطعة. Hook قوي لأول ثانيتين.'},
+  bydCity:{url:TT+'/@byd_global/video/7598429648032140576', views:'4.8M', note:'BYD تيك توك (صيني): قيادة هادئة بالمدينة — مناسب لـ S09 كسيارة يومية للعائلة.'},
+  audiNight:{url:IG+'/audi/reel/DeW0vkuDcUg/', views:'12.8M', note:'من الأنجح بكل اللي سحبناه. RS 5 بتصوير ليلي — بالضبط فكرة التصوير الليلي والإضاءة بلون البراند بالدمام.'},
+  bmwLight:{url:IG+'/bmw/reel/DeEKFNeCcAv/', views:'2.1M', note:'Welcome light والإضاءة قبل الرحلة — لقطات ليلية للإضاءة الأمامية والخلفية.'},
+  bmwSunset:{url:TT+'/@bmw/video/7664657841843719457', views:'9.5M', note:'BMW تيك توك: "sunset at HQ just hits different" — غروب + سيارة واحدة. نصوّرها على كورنيش الدمام.'},
+  bmwTwo:{url:IG+'/bmwsaudiarabia/reel/DZfKi65D0fL/', views:'1.4M', note:'"أيقونتان. حضور لا يُخطئ" — X5 M و X6 M بنفس الفيديو. نفس فكرة S06 vs S09.'},
+  bmwDetail:{url:IG+'/bmw/reel/Dd8b7cXjjQa/', views:'2.2M', note:'"Comment which detail caught your eye" — CTA للكومنت يرفع التفاعل.'},
+  exeedPick:{url:IG+'/exeedglobal/reel/DdoLLCoBhif/', views:'2.5M', note:'EXEED (صيني): "Light Mode or Dark Mode? What’s your pick" — سؤال اختيار بين نسختين. نطبقه: S06 لو S09؟'},
+  mbDokhi:{url:IG+'/mercedesbenzksa/reel/DY2fRkFkvnj/', views:'87K', note:'مرسيدس السعودية مع محمد الدوخي — وجه سعودي معروف + نبرة محلية. فكرة: كرييتر من الشرقية.'},
+  mbMirage:{url:IG+'/mercedesbenzksa/reel/Dac8UOWCBQK/', views:'200K', note:'الأعلى بحساب مرسيدس السعودية. G 63 "سراب" مستوحى من الصحراء — ربط السيارة بالبيئة السعودية.'},
+  porscheSketch:{url:IG+'/porsche/reel/DdwTr8wKlTU/', views:'4.3M', note:'رسّام يرسم السيارة (#PorscheMoment) — محتوى كرييتر بسيط ورخيص ويجيب مشاهدات عالية.'},
+  bmwSelfie:{url:TT+'/@bmw/video/7038978274164247814', views:'30.3M', note:'الأعلى مشاهدة بحساب BMW تيك توك — تعاون مع كرييتر سيارات بأسلوب "Did you know". نسويه مع كرييتر سعودي.'},
+  bydCharge:{url:IG+'/byd_global/reel/DdGL7bYj-LT/', views:'28M', note:'BYD (صيني) — الأعلى بحسابهم: "Ready in 5. Full in 9" — أرقام كبيرة على الشاشة بإيقاع سريع. نطبقها على مميزات S06 بثلاث أرقام.'},
+  bydRes:{url:IG+'/byd_global/reel/DdYdwesDH2s/', views:'2.8M', note:'BYD: "144p… 1080p" — الصورة تتوضح تدريجياً. فكرة Hook ذكية لكشف السيارة.'},
+  bmwSkytop:{url:TT+'/@bmw/video/7504674157163040022', views:'18.4M', note:'BMW تيك توك: "Unforgettable details" — لقطات قريبة للتفاصيل مع موسيقى ترند.'},
+  exeedDetail:{url:IG+'/exeedglobal/reel/Dc5zfzIh2t3/', views:'2.7M', note:'EXEED (صيني): "Lights, lines, wheels — up close" — تفاصيل السيارة من قريب.'},
+  bmwShape:{url:IG+'/bmw/reel/DeL4qFBj6Jn/', views:'2.3M', note:'"Something expressive is taking shape" — تيزر كشف تدريجي قبل الإطلاق.'},
+  bmwMillion:{url:IG+'/bmw/reel/Dd_p30MkYPY/', views:'8M', note:'الأعلى بحساب BMW: "999,999 came before it" — قصة + ترقب للحظة الكشف.'},
+  porscheDetail:{url:IG+'/porsche/reel/Db53IowI10b/', views:'3.1M', note:'"The art of getting the details right" — لقطات قريبة للتفاصيل بدون كشف كامل.'},
+  mbReveal:{url:TT+'/@mercedesbenz/video/7684216743950060833', views:'7.1M', note:'مرسيدس تيك توك: "First impressions… the reveal" — لحظة الكشف وردة فعل الناس.'},
+  lexusEvent:{url:IG+'/lexusksa/reel/Dd6ODuUFQo3/', views:'354K', note:'أمسية الكشف عن لكزس ES 2026 بمعرض بالسعودية (طريق المدينة) — رفرنس مباشر لحفل افتتاح.'},
+  lynkParis:{url:IG+'/lynkco/reel/DdgUnUsFNtN/', views:'6.5M', note:'Lynk & Co (صيني): "Bonjour Paris… More coming soon" — دعوة لحدث بأسلوب تيزر.'},
+  exeedEvent:{url:IG+'/exeedglobal/reel/Des26iulbP-/', views:'2.6M', note:'EXEED (صيني): "Step inside the launch" — جولة داخل حفل إطلاق. رفرنس لدعوة الافتتاح.'},
+  bmwHira:{url:IG+'/bmwsaudiarabia/reel/DZZfjb4DAJt/', views:'378K', note:'"اكتشف صالة عرض BMW الجديدة كلياً في حراء" — أقرب رفرنس لإعلان افتتاح معرض جديد بالسعودية.'},
+  bmwHira2:{url:IG+'/bmwsaudiarabia/reel/DZ2QGF5NtLX/', views:'324K', note:'"اكتشفوا وجهتنا الجديدة في حراء، جدة" — جولة بالمعرض الجديد والخدمات.'},
+  bmw7:{url:IG+'/bmwsaudiarabia/reel/DdOnZX-tOow/', views:'196K', note:'بلهجة سعودية "مو مجرد سيارة فاخرة.. هي تجربة متكاملة" — نبرة قريبة مناسبة لإعلانات Test Drive.'},
+  jetour:{url:TT+'/@jetour_global/video/7280070851133787397', views:'24.3M', note:'Jetour تيك توك (صيني): "Ready to embark on an epic adventure?" — دعوة مغامرة. نحولها لدعوة Test Drive.'},
+  audiTour:{url:IG+'/audi/reel/Db5ZDaHgCTn/', views:'12.1M', note:'ملخص فعالية "One highlight after another" — رفرنس لريكاب يوم الافتتاح.'},
+  xpengShow:{url:IG+'/xpeng_global/reel/Ded6N8yDyDP/', views:'509K', note:'XPENG (صيني) بمعرض باريس — تغطية حدث إطلاق وزحمة الزوار.'},
+  bmw320:{url:IG+'/bmw/reel/DeBlWH9CUCd/', views:'2.7M', note:'"sporty, modern and timeless" — موديل واحد بلقطات نظيفة. مناسب لـ Retargeting بموديل واحد.'},
+  bydU9:{url:TT+'/@byd_global/video/7582787245770427681', views:'7.7M', note:'BYD تيك توك (صيني): "Can you catch a glimpse?" — سرعة + سؤال للمشاهد.'},
+  porscheCommunity:{url:IG+'/porsche/reel/DcypBtqB_BK/', views:'2.4M', note:'"Nobody needs a sportscar. We just end up loving them anyway" — محتوى مجتمع وملاك، رفرنس لـ UGC.'},
+  mbSend:{url:TT+'/@mercedesbenz/video/7624441425983327521', views:'3.3M', note:'مرسيدس تيك توك: "How do you send this to yourself?" — كابشن مضحك يخلي الناس يشاركون الفيديو.'},
 };
+const C = o => ({...o});
+function uid(){ return '_' + Math.random().toString(36).slice(2,9); }
+const I = (platform, type, desc, tag, refs) => ({ id:uid(), platform, type, desc, tag, status:'new', media: refs.map(C) });
+
 let data = {
   '1': [
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Snap Ads 6–10s — "SOUEAST قريباً في الدمام"', desc:'لقطات سريعة لـ S06 و S09 + لوكيشن الدمام + نهاية بـ "قريباً". فيرتكال، أول 2 ثانية فيها السيارة.', tag:'Snapchat — Snap Ads 9:16', media:[R.mbComing, R.lexusTeaser] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Reels 15s — تعريف بالبراند', desc:'مين هي SOUEAST؟ تصميم، تقنية، ضمان — بدون أسعار. يبني الثقة ببراند جديد على السوق.', tag:'Meta IG/FB — Reels 15s', media:[R.bmw5, R.audiGreat] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'In-Feed 15–20s — S09 للعائلة', desc:'S09 كسيارة العائلة بالشرقية: 7 مقاعد، مساحة، رحلة الويكند للخبر/البحر. أسلوب Organic.', tag:'TikTok — In-Feed', media:[R.bmwX7, R.bmwI5] },
-    { id:uid(), platform:'All Platforms', layer:'Awareness', type:'Night Shoot — إضاءة بلون SOUEAST', desc:'تصوير ليلي لواجهة المعرض أو معلم بالدمام مضاء بلون البراند — مثل رفرنس Audi RS 5 الليلي (12.8M).', tag:'Meta + Snap + TikTok — 10–15s', media:[R.audiNight, R.bmwLight] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Carousel — S06 vs S09 "أيهم يناسبك؟"', desc:'كاروسيل يعرض الموديلين: S06 للشباب/المدينة، S09 للعائلة. يجيب engagement بالكومنتات.', tag:'Meta IG/FB — Carousel', media:[R.bmwTwo, R.bmwDetail] },
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Local Tone — لهجة شرقاوية', desc:'سكربت قصير بلهجة المنطقة الشرقية — نبرة قريبة من الناس مثل محتوى مرسيدس السعودية مع محمد الدوخي.', tag:'Snapchat + TikTok — 10s', media:[R.mbDokhi, R.mbMirage] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Creator Collab — رسّام/كرييتر يرسم S06', desc:'كرييتر من الشرقية يرسم أو يصوّر السيارة بأسلوبه — محتوى يحس Organic ويجيب مشاهدات بتكلفة قليلة.', tag:'TikTok + Reels — Spark/Partnership Ads', media:[R.porscheSketch] },
+    I('Snapchat','قريباً في الدمام — Snap Ads 6–10s','لقطات سريعة لـ S06 و S09 + لوكيشن الدمام + نهاية بـ "قريباً". فيرتكال، أول 2 ثانية فيها السيارة.','Snapchat — 9:16 · 6–10s',[R.mbComing,R.lexusTeaser]),
+    I('Meta','Reels 15s — تعريف بالبراند','مين هي SOUEAST؟ تصميم، تقنية، ضمان — بدون أسعار. يبني الثقة ببراند جديد على السوق.','Meta IG/FB — Reels 15s',[R.bmw5,R.audiGreat,R.xpeng]),
+    I('Meta','مميزات S06 بالأرقام','ثلاث أرقام كبيرة على الشاشة (قوة، تقنية، ضمان) بإيقاع سريع — أسلوب BYD "Ready in 5".','Meta Reels + TikTok — 10–15s',[R.bydCharge,R.bydRes]),
+    I('TikTok','S09 للعائلة — In-Feed 15–20s','S09 كسيارة العائلة بالشرقية: 7 مقاعد، مساحة، رحلة الويكند للخبر/البحر. أسلوب Organic.','TikTok — In-Feed',[R.bmwX7,R.bmwI5,R.bydCity]),
+    I('All Platforms','Night Shoot — إضاءة بلون SOUEAST','تصوير ليلي لواجهة المعرض أو كورنيش الدمام بلون البراند — مثل رفرنس Audi RS 5 الليلي.','Meta + Snap + TikTok — 10–15s',[R.audiNight,R.bmwLight,R.bmwSunset]),
+    I('TikTok','تفاصيل قريبة بموسيقى ترند','Close-ups للمصابيح والجنوط والداخلية على ساوند ترند — بدون كلام.','TikTok + Snapchat — 10s',[R.bmwSkytop,R.exeedDetail]),
+    I('Meta','Carousel — S06 vs S09 "أيهم يناسبك؟"','كاروسيل يعرض الموديلين: S06 للشباب/المدينة، S09 للعائلة. يجيب engagement بالكومنتات.','Meta IG/FB — Carousel',[R.bmwTwo,R.bmwDetail,R.exeedPick]),
+    I('Snapchat','Local Tone — لهجة شرقاوية','سكربت قصير بلهجة المنطقة الشرقية — نبرة قريبة من الناس مثل محتوى مرسيدس السعودية مع محمد الدوخي.','Snapchat + TikTok — 10s',[R.mbDokhi,R.mbMirage]),
+    I('TikTok','Creator Collab — كرييتر يقدّم S06','كرييتر سيارات من الشرقية يقدّم السيارة بأسلوبه — محتوى يحس Organic ويجيب مشاهدات بتكلفة قليلة.','TikTok + Reels — Spark Ads',[R.bmwSelfie,R.porscheSketch]),
   ],
   '2': [
-    { id:uid(), platform:'Snapchat', layer:'Awareness', type:'Countdown — "باقي X أيام"', desc:'ستوري/سناب يومي يعد للافتتاح — كل يوم تفصيلة جديدة من المعرض.', tag:'Snapchat — Daily', media:[R.bmwShape, R.mbComing] },
-    { id:uid(), platform:'Meta', layer:'Awareness', type:'Partial Reveal — المعرض من وراء الستار', desc:'لقطات قريبة للمعرض والسيارات مغطاة — كشف تدريجي.', tag:'Meta Reels + Stories', media:[R.bmwMillion, R.porscheDetail] },
-    { id:uid(), platform:'TikTok', layer:'Awareness', type:'Invite — "انت معزوم على الافتتاح"', desc:'دعوة مفتوحة لحفل الافتتاح: التاريخ، اللوكيشن، وش بيكون موجود.', tag:'TikTok — In-Feed', media:[R.lexusEvent] },
+    I('Snapchat','Countdown — "باقي X أيام"','ستوري/سناب يومي يعد للافتتاح — كل يوم تفصيلة جديدة من المعرض.','Snapchat — Daily',[R.bmwShape,R.lynkSoon]),
+    I('Meta','Partial Reveal — المعرض من وراء الستار','لقطات قريبة للمعرض والسيارات مغطاة — كشف تدريجي.','Meta Reels + Stories',[R.bmwMillion,R.porscheDetail,R.mbReveal]),
+    I('TikTok','Invite — "انت معزوم على الافتتاح"','دعوة مفتوحة لحفل الافتتاح: التاريخ، اللوكيشن، وش بيكون موجود.','TikTok — In-Feed',[R.lexusEvent,R.lynkParis,R.exeedEvent]),
   ],
   '3': [
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Store Traffic — "زورنا اليوم"', desc:'إعلان بلوكيشن المعرض + Get Directions — يستهدف نطاق الدمام.', tag:'Meta — Visit Location', media:[R.bmwHira, R.bmwHira2] },
-    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'Lead Form — احجز Test Drive', desc:'فورم Native: الاسم، الجوال، الموديل (S06/S09)، الوقت المناسب.', tag:'Snapchat — Lead Gen', media:[R.bmw7] },
-    { id:uid(), platform:'TikTok', layer:'Conversion', type:'Live Coverage — يوم الافتتاح', desc:'تغطية سريعة من الحفل + ناس تجرب السيارات — تتحول لإعلان Spark Ads.', tag:'TikTok — Spark Ads', media:[R.lexusEvent, R.audiTour] },
+    I('Meta','Store Traffic — "زورنا اليوم"','إعلان بلوكيشن المعرض + Get Directions — يستهدف نطاق الدمام.','Meta — Visit Location',[R.bmwHira,R.bmwHira2]),
+    I('Snapchat','Lead Form — احجز Test Drive','فورم Native: الاسم، الجوال، الموديل (S06/S09)، الوقت المناسب.','Snapchat — Lead Gen',[R.bmw7,R.jetour]),
+    I('TikTok','Live Coverage — يوم الافتتاح','تغطية سريعة من الحفل + ناس تجرب السيارات — تتحول لإعلان Spark Ads.','TikTok — Spark Ads',[R.lexusEvent,R.audiTour,R.xpengShow]),
   ],
   '4': [
-    { id:uid(), platform:'Meta', layer:'Conversion', type:'Retargeting — "لسه ما جربتها؟"', desc:'لكل من شاف فيديوهات الافتتاح أو تفاعل — CTA مباشر Test Drive.', tag:'Meta — Retargeting Lead Form', media:[R.bmw320] },
-    { id:uid(), platform:'Snapchat', layer:'Conversion', type:'UGC — تجارب العملاء بالمعرض', desc:'عملاء حقيقيين بعد الـ Test Drive — رأيهم بجملة وحدة.', tag:'Snapchat + TikTok — 10–15s', media:[R.porscheCommunity] },
+    I('Meta','Retargeting — "لسه ما جربتها؟"','لكل من شاف فيديوهات الافتتاح أو تفاعل — CTA مباشر Test Drive.','Meta — Retargeting Lead Form',[R.bmw320,R.bydU9]),
+    I('Snapchat','UGC — تجارب العملاء بالمعرض','عملاء حقيقيين بعد الـ Test Drive — رأيهم بجملة وحدة.','Snapchat + TikTok — 10–15s',[R.porscheCommunity,R.mbSend]),
   ],
 };
 
-let currentPhase = '1';
+// ─── STATE ─────────────────────────────────────────────────────────────
+let cur = { ph:'1', id:null, ref:0 };
+const closed = new Set();
 
-// ─── UTILS ──────────────────────────────────────────────────────────────────
-function uid() { return '_' + Math.random().toString(36).slice(2,9); }
-
-function getPlatformClass(p) { return platformClass[p] || 'plt-all'; }
-
-function isVideo(url) {
-  return /youtube|youtu\.be|vimeo|tiktok|instagram|\.mp4|\.mov|\.webm/i.test(url);
-}
-
-function getMediaIcon(url) {
-  if (/youtube|youtu\.be/i.test(url)) return '▶';
-  if (/tiktok/i.test(url)) return '🎵';
-  if (/instagram/i.test(url)) return '📷';
-  if (/drive\.google/i.test(url)) return '📁';
-  if (/\.mp4|\.mov|\.webm/i.test(url)) return '🎬';
-  return '🔗';
-}
-
-function shortUrl(url) {
-  try { return new URL(url).hostname.replace('www.','') + '...'; } catch { return url.slice(0,30)+'...'; }
-}
-
-function getYoutubeThumbnail(url) {
-  const patterns = [
-    /youtube\.com\/watch\?v=([^&]+)/,
-    /youtu\.be\/([^?&]+)/,
-    /youtube\.com\/embed\/([^?&]+)/,
-    /youtube\.com\/shorts\/([^?&]+)/,
-  ];
-  for (const p of patterns) {
-    const m = url.match(p);
-    if (m) return { id: m[1], thumb: `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg` };
-  }
+// ─── HELPERS ───────────────────────────────────────────────────────────
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function embedUrl(u){
+  let m = u.match(/instagram\.com\/(?:[^\/]+\/)?(?:reel|reels|p|tv)\/([A-Za-z0-9_-]+)/);
+  if (m) return 'https://www.instagram.com/reel/'+m[1]+'/embed/';
+  m = u.match(/tiktok\.com\/.*\/video\/(\d+)/);
+  if (m) return 'https://www.tiktok.com/player/v1/'+m[1]+'?music_info=1&description=1&rel=0';
+  m = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+  if (m) return 'https://www.youtube.com/embed/'+m[1];
   return null;
 }
-
-function isImageUrl(url) {
-  return /\.(jpg|jpeg|png|gif|webp|svg|bmp)(\?|$)/i.test(url);
+function handleOf(u){
+  let m = u.match(/tiktok\.com\/@([^\/?]+)/); if (m) return '@'+m[1];
+  m = u.match(/instagram\.com\/([^\/?]+)\/(?:reel|p)\//); if (m) return '@'+m[1];
+  if (/instagram\.com/.test(u)) return 'Instagram';
+  try { return new URL(u).hostname.replace('www.',''); } catch(e){ return 'لينك'; }
 }
+const srcLabel = u => /tiktok/.test(u) ? 'TikTok' : /instagram/.test(u) ? 'Instagram' : /youtu/.test(u) ? 'YouTube' : 'Link';
+const plClass = p => ({Meta:'b-meta',Snapchat:'b-snap',TikTok:'b-tt'})[p] || 'b-all';
+const ST = { new:'جديد', shoot:'قيد التصوير', done:'جاهز' };
+const items = ph => data[ph] || (data[ph] = []);
+const curItem = () => items(cur.ph).find(x => x.id === cur.id);
+function flat(){ const out=[]; PHASES.forEach(p => items(p.id).forEach((it,i) => out.push({ph:p.id, it, i}))); return out; }
+function norm(m){ return typeof m === 'string' ? {url:m, note:''} : m; }
 
-function isVideoUrl(url) {
-  return /\.(mp4|mov|webm|avi)(\?|$)/i.test(url);
-}
-
-function buildMediaPreview(url, phaseId, cardId, idx) {
-  const yt = getYoutubeThumbnail(url);
-  if (yt) {
-    return `<div class="media-preview" onclick="window.open('${url}','_blank')" title="افتح في تاب جديد">
-      <img src="${yt.thumb}" alt="YouTube thumbnail" onerror="this.parentElement.style.display='none'" />
-      <div class="media-preview-play">▶</div>
-      <div class="media-preview-label">YouTube</div>
-    </div>`;
-  }
-  if (/tiktok\.com/i.test(url)) {
-    return `<div class="media-preview" onclick="window.open('${url}','_blank')" style="background:#010101;height:60px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:4px;margin-bottom:6px;cursor:pointer">
-      <span style="font-size:22px">🎵</span>
-      <span style="font-size:12px;color:#69c9d0;font-family:'Tajawal',sans-serif;font-weight:700">TikTok Video — اضغط للفتح</span>
-    </div>`;
-  }
-  if (/instagram\.com/i.test(url)) {
-    const h=(url.match(/instagram\.com\/([^\/]+)/)||[])[1]||'instagram';
-    return `<div class="ig-tile" onclick="window.open('${url}','_blank')"><span class="ig-brand">@${h}</span><span class="ig-cta">Instagram Reel ↗</span></div>`;
-  }
-  if (isImageUrl(url)) {
-    return `<div class="media-preview-img-only" onclick="window.open('${url}','_blank')" title="افتح الصورة">
-      <img src="${url}" alt="preview" onerror="this.parentElement.style.display='none'" />
-    </div>`;
-  }
-  if (isVideoUrl(url)) {
-    return `<div style="margin-bottom:6px">
-      <video src="${url}" controls style="width:100%;max-height:160px;border-radius:4px;display:block;background:#000" onerror="this.style.display='none'"></video>
-    </div>`;
-  }
-  return ''; // no preview for generic links
-}
-
-// ─── RENDER ─────────────────────────────────────────────────────────────────
-function renderAll() {
-  const main = document.getElementById('main-content');
-  main.innerHTML = '';
-
-  Object.keys(phaseConfig).forEach(phaseId => {
-    const panel = document.createElement('div');
-    panel.className = 'phase-panel' + (phaseId === currentPhase ? ' active' : '');
-    panel.id = 'panel-' + phaseId;
-    panel.innerHTML = buildPanel(phaseId);
-    main.appendChild(panel);
+// ─── RENDER: SIDEBAR ───────────────────────────────────────────────────
+function renderSide(){
+  const total = flat().length;
+  document.getElementById('side-count').textContent = total + ' فكرة · ' + PHASES.length + ' مراحل';
+  let n = 0, html = '';
+  PHASES.forEach(p => {
+    const list = items(p.id);
+    html += `<div class="ph ${closed.has(p.id)?'closed':''}">
+      <button class="ph-h" onclick="togglePh('${p.id}')" aria-expanded="${!closed.has(p.id)}">
+        <span class="nm">${esc(p.name)}</span>
+        <span class="ct">${list.length}<svg class="chev" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" stroke="#5c5c5c" stroke-width="1.6" fill="none"/></svg></span>
+      </button><div class="ph-items">`;
+    list.forEach(it => {
+      n++;
+      const refs = (it.media||[]).length;
+      html += `<button class="it ${it.id===cur.id?'on':''}" onclick="select('${p.id}','${it.id}')">
+        <span class="n lat">${String(n).padStart(2,'0')}</span>
+        <span class="th" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="#FFA726"/></svg></span>
+        <span class="tx"><span class="t1">${esc(it.type)}</span><span class="t2">${esc(it.platform)} · ${refs} رفرنس</span></span>
+        <span class="dot st-${it.status||'new'}" title="${ST[it.status||'new']}"></span>
+      </button>`;
+    });
+    html += `<button class="add-in" onclick="openAdd('${p.id}')">+ إضافة فكرة لهذه المرحلة</button></div></div>`;
   });
+  document.getElementById('side').innerHTML = html;
 }
 
-function buildPanel(phaseId) {
-  const cfg = phaseConfig[phaseId];
-  const cards = data[phaseId] || [];
-
-  const budgetBars = cfg.budgets.map(b => `
-    <div class="budget-row">
-      <span class="budget-platform">${b.p}</span>
-      <div class="budget-track"><div class="budget-fill" style="width:${b.pct}%;background:${b.color}"></div></div>
-      <span class="budget-val" style="color:${b.color}">${b.val}</span>
-    </div>
-  `).join('');
-
-  const kpiBoxes = cfg.kpis.map(k => `
-    <div class="kpi-box">
-      <div class="kpi-label">${k.l}</div>
-      <div class="kpi-val">${k.v}</div>
-    </div>
-  `).join('');
-
-  // Group by layer
-  const layers = {};
-  cards.forEach(c => {
-    const l = c.layer || 'General';
-    if (!layers[l]) layers[l] = [];
-    layers[l].push(c);
-  });
-
-  const layerColors = { 'Awareness':'#000','Consideration':'#FFF1E6','Conversion':'#FF6B1A','General':'#EEF0F3' };
-  const layerText = { 'Awareness':'#FFA726','Consideration':'#FF6B1A','Conversion':'#000000','General':'#4a4a4a' };
-
-  let layerSections = '';
-  const order = ['Awareness','Consideration','Conversion','General'];
-  order.forEach(layer => {
-    if (!layers[layer]) return;
-    const cardsList = layers[layer].map(c => buildCard(c, phaseId)).join('');
-    layerSections += `
-      <div class="layer-section">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div class="layer-label" style="background:${layerColors[layer]};color:${layerText[layer]};border:1px solid ${layerText[layer]}33">
-            <span>${layer}</span>
-            <span style="font-size:10px;opacity:0.7">${layers[layer].length} محتوى</span>
-          </div>
-        </div>
-        <div class="cards-grid">${cardsList}
-          <button class="add-card-btn" onclick="openAddModal('${phaseId}','${layer}')">
-            <span style="font-size:18px;opacity:0.5">+</span> إضافة محتوى جديد
-          </button>
-        </div>
-      </div>
-    `;
-  });
-
-  if (!layerSections) {
-    layerSections = `<div class="cards-grid">
-      <button class="add-card-btn" onclick="openAddModal('${phaseId}','General')">
-        <span style="font-size:18px;opacity:0.5">+</span> إضافة أول محتوى لهذه الـ Phase
-      </button>
-    </div>`;
+// ─── RENDER: MAIN ──────────────────────────────────────────────────────
+function renderMain(){
+  const p = PHASES.find(x => x.id === cur.ph);
+  const it = curItem();
+  const all = flat(); const pos = all.findIndex(x => x.it.id === cur.id);
+  let html = `<section class="phase-strip">
+    <div><h2>${esc(p.full)}</h2><p>${esc(p.sub)}</p></div>
+    <div class="pills"><span class="pill">${esc(p.period)}</span><span class="pill o">${esc(p.obj)}</span></div>
+    <div class="split lat">${esc(p.split)}</div>
+  </section>`;
+  if (!it){
+    html += `<section class="stage"><p style="font-size:15px;color:#5c5c5c">ما بيها أفكار بعد. <button class="btn pri" onclick="openAdd('${cur.ph}')">+ أضف أول فكرة</button></p></section>`;
+    document.getElementById('main').innerHTML = html; return;
   }
-
-  return `
-    <div class="phase-header-card">
-      <div>
-        <div class="phase-name">${cfg.name}</div>
-        <div class="phase-sub">${cfg.sub}</div>
-        <div class="phase-badges">
-          <span class="badge badge-period">📅 ${cfg.period}</span>
-          
-          <span class="badge badge-obj">🎯 ${cfg.obj}</span>
-        </div>
-      </div>
-      <div class="kpi-row">${kpiBoxes}</div>
+  const media = (it.media||[]).map(norm);
+  if (cur.ref >= media.length) cur.ref = 0;
+  const r = media[cur.ref];
+  const emb = r ? embedUrl(r.url) : null;
+  const player = r
+    ? (emb ? `<iframe src="${esc(emb)}" title="${esc(handleOf(r.url))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy" scrolling="no"></iframe>`
+           : `<div class="empty">هذا اللينك ما يتشغل داخل الصفحة<a class="btn pri" href="${esc(r.url)}" target="_blank" rel="noopener">افتحه ↗</a></div>`)
+    : `<div class="empty">ما بيها رفرنس بعد — أضف لينك إنستغرام أو تيك توك تحت</div>`;
+  const tabs = media.map((m,i) => `<button class="ref-tab ${i===cur.ref?'on':''}" onclick="pickRef(${i})"><b class="lat">${esc(handleOf(m.url))}</b><span class="lat">${esc(srcLabel(m.url))}${m.views?' · '+esc(m.views):''}</span></button>`).join('');
+  html += `<section class="stage">
+    <div class="player-col">
+      <div class="player">${player}</div>
+      ${media.length ? `<div class="refs">${tabs}</div>` : ''}
+      ${r ? `<div class="ref-links"><a href="${esc(r.url)}" target="_blank" rel="noopener">افتح بالتطبيق ↗</a><button class="btn danger" style="padding:4px 10px;font-size:12px" onclick="delRef()">حذف الرفرنس</button></div>` : ''}
     </div>
-
-    <div class="budget-section">
-      <div class="section-title" style="margin-bottom:12px">توزيع المنصات</div>
-      ${budgetBars}
-    </div>
-
-    ${layerSections}
-  `;
-}
-
-function buildCard(c, phaseId) {
-  const pClass = getPlatformClass(c.platform);
-  const mediaItems = (c.media||[]).map((m,i) => {
-    const url = typeof m === 'object' ? m.url : m;
-    const note = typeof m === 'object' ? (m.note||'') : '';
-    const preview = buildMediaPreview(url, '${phaseId}', '${c.id}', i);
-    return `
-    <div class="media-item" style="flex-direction:column;align-items:stretch;gap:5px">
-      ${preview}
-      <div style="display:flex;align-items:center;gap:8px">
-        <span class="media-item-icon">${getMediaIcon(url)}</span>
-        <div class="media-item-inner">
-          <a class="media-item-link" href="${url}" target="_blank" title="${url}">${shortUrl(url)}</a>
-        </div>
-        <span class="media-item-del" onclick="removeMedia('${phaseId}','${c.id}',${i})" title="حذف">✕</span>
+    <div class="info">
+      <div class="badges">
+        <span class="bdg b-ph">${esc(p.name)}</span>
+        <span class="bdg ${plClass(it.platform)}">${esc(it.platform)}</span>
+        <span class="bdg b-fmt">${esc(it.tag||'')}</span>
       </div>
-      <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${c.id}',${i},this.value)">${escHtml(note)}</textarea>
-    </div>`;
-  }).join('');
-
-  return `
-    <div class="content-card" id="card-${c.id}">
-      <div class="card-top">
-        <div>
-          <span class="card-platform-badge ${pClass}">${c.platform}</span>
-        </div>
-        <div class="card-actions">
-          <button class="icon-btn" onclick="toggleMedia('${c.id}')" title="إضافة لينك/فيديو">🔗</button>
-          <button class="icon-btn danger" onclick="deleteCard('${phaseId}','${c.id}')" title="حذف">✕</button>
-        </div>
+      <label class="sr" for="f-title">عنوان الفكرة</label>
+      <input id="f-title" class="e-title" value="${esc(it.type)}" oninput="upd('type',this.value)">
+      <label class="sr" for="f-desc">الوصف</label>
+      <textarea id="f-desc" class="e-desc" oninput="upd('desc',this.value)">${esc(it.desc)}</textarea>
+      ${r ? `<div class="box"><label for="f-note">شنو ناخذ من الرفرنس (${esc(handleOf(r.url))})</label><textarea id="f-note" oninput="updNote(this.value)">${esc(r.note||'')}</textarea></div>` : ''}
+      <div class="box"><label for="f-url">إضافة رفرنس جديد</label>
+        <div class="add-ref"><input id="f-url" class="lat" dir="ltr" placeholder="https://www.instagram.com/reel/... أو tiktok.com/@.../video/..."><button class="btn blk" onclick="addRef()">+ إضافة</button></div>
       </div>
-      <div class="card-body">
-        <textarea class="card-type" rows="1" oninput="updateCard('${phaseId}','${c.id}','type',this.value);autoResize(this)" onload="autoResize(this)">${escHtml(c.type)}</textarea>
-        <textarea class="card-desc" rows="3" oninput="updateCard('${phaseId}','${c.id}','desc',this.value)">${escHtml(c.desc)}</textarea>
+      <div class="row">
+        <label for="f-st">الحالة</label>
+        <select id="f-st" onchange="upd('status',this.value);renderSide()">${Object.entries(ST).map(([k,v]) => `<option value="${k}" ${it.status===k?'selected':''}>${v}</option>`).join('')}</select>
+        <label for="f-tag">المنصة / المقاس</label>
+        <input id="f-tag" value="${esc(it.tag||'')}" oninput="upd('tag',this.value)" style="font-size:13px;padding:8px 10px;border:1px solid #D0D3D8;border-radius:6px;flex:1 1 160px">
+        <button class="btn danger" onclick="delIdea()">حذف الفكرة</button>
       </div>
-      <div class="card-footer">
-        <input class="card-tag" value="${escHtml(c.tag||'')}" placeholder="tag / platform" oninput="updateCard('${phaseId}','${c.id}','tag',this.value)">
-      </div>
-      <div class="card-media" id="media-${c.id}">
-        <div class="media-input-row">
-          <input class="media-input" id="mi-${c.id}" placeholder="https://youtube.com/... أو أي لينك" />
-          <button class="media-btn" onclick="addMedia('${phaseId}','${c.id}')">+ إضافة</button>
-        </div>
-        <div class="media-input-row" style="margin-bottom:10px">
-          <input class="media-input" id="mn-${c.id}" placeholder="وصف الرابط أو الفيديو (اختياري)" style="font-family:'Tajawal',sans-serif;direction:rtl" />
-        </div>
-        <div class="media-items" id="ml-${c.id}">${mediaItems}</div>
+      <div class="nav">
+        <button class="btn pri" onclick="step(1)" ${pos>=all.length-1?'disabled style="opacity:.4"':''}>الفكرة التالية ←</button>
+        <span class="counter lat">${pos+1} / ${all.length}</span>
+        <button class="btn" onclick="step(-1)" ${pos<=0?'disabled style="opacity:.4"':''}>→ السابقة</button>
       </div>
     </div>
-  `;
+  </section>`;
+  document.getElementById('main').innerHTML = html;
+}
+function renderAll(){ renderSide(); renderMain(); }
+
+// ─── ACTIONS ───────────────────────────────────────────────────────────
+function select(ph,id){ cur = {ph, id, ref:0}; location.hash = ph+'-'+id; renderAll(); if (innerWidth < 760) document.getElementById('main').scrollIntoView({behavior:'smooth'}); }
+function togglePh(id){ closed.has(id) ? closed.delete(id) : closed.add(id); renderSide(); }
+function pickRef(i){ cur.ref = i; renderMain(); }
+function step(d){ const all = flat(); const pos = all.findIndex(x => x.it.id === cur.id); const nx = all[pos+d]; if (nx) select(nx.ph, nx.it.id); }
+function upd(f,v){ const it = curItem(); if (!it) return; it[f] = v; if (f==='type'){ renderSide(); } queueSave(); }
+function updNote(v){ const it = curItem(); if (!it) return; it.media = it.media.map(norm); it.media[cur.ref].note = v; queueSave(); }
+function addRef(){
+  const el = document.getElementById('f-url'); const u = el.value.trim(); if (!u) return;
+  const it = curItem(); it.media = (it.media||[]).map(norm); it.media.push({url:u, note:'', views:''});
+  cur.ref = it.media.length-1; renderAll(); toast('تمت إضافة الرفرنس'); saveAll();
+}
+function delRef(){ const it = curItem(); if (!it || !confirm('تحذف هذا الرفرنس؟')) return; it.media.splice(cur.ref,1); cur.ref = 0; renderAll(); saveAll(); }
+function delIdea(){
+  if (!confirm('تحذف هذه الفكرة؟')) return;
+  const all = flat(); const pos = all.findIndex(x => x.it.id === cur.id);
+  data[cur.ph] = items(cur.ph).filter(x => x.id !== cur.id);
+  const nx = flat()[Math.min(pos, flat().length-1)];
+  cur = nx ? {ph:nx.ph, id:nx.it.id, ref:0} : {ph:cur.ph, id:null, ref:0};
+  renderAll(); toast('تم الحذف'); saveAll();
 }
 
-function escHtml(str) {
-  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+// add modal
+function openAdd(ph){
+  const s = document.getElementById('a-ph');
+  s.innerHTML = PHASES.map(p => `<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  s.value = ph || cur.ph;
+  document.getElementById('ov-add').classList.add('open');
+  document.getElementById('a-t').focus();
 }
-
-// ─── INTERACTIONS ─────────────────────────────────────────────────────────
-function switchPhase(id, btn) {
-  currentPhase = id;
-  document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.phase-tab').forEach(b => b.classList.remove('active'));
-  const panel = document.getElementById('panel-' + id);
-  if (panel) panel.classList.add('active');
-  btn.classList.add('active');
+function closeAdd(){ document.getElementById('ov-add').classList.remove('open'); }
+function addIdea(){
+  const t = document.getElementById('a-t').value.trim(); if (!t){ document.getElementById('a-t').focus(); return; }
+  const ph = document.getElementById('a-ph').value; const u = document.getElementById('a-u').value.trim();
+  const it = { id:uid(), platform:document.getElementById('a-pl').value, type:t, desc:document.getElementById('a-d').value.trim(), tag:document.getElementById('a-tag').value.trim(), status:'new', media: u ? [{url:u, note:'', views:''}] : [] };
+  items(ph).push(it);
+  ['a-t','a-d','a-tag','a-u'].forEach(id => document.getElementById(id).value = '');
+  closeAdd(); closed.delete(ph); select(ph, it.id); toast('تمت الإضافة'); saveAll();
 }
+document.getElementById('ov-add').addEventListener('click', e => { if (e.target.id === 'ov-add') closeAdd(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAdd(); });
 
-function toggleMedia(cardId) {
-  const el = document.getElementById('media-' + cardId);
-  el.classList.toggle('open');
-}
+function toast(m){ const t = document.getElementById('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 2200); }
 
-function addMedia(phaseId, cardId) {
-  const urlInput = document.getElementById('mi-' + cardId);
-  const noteInput = document.getElementById('mn-' + cardId);
-  const url = urlInput.value.trim();
-  if (!url) return;
-  const note = noteInput ? noteInput.value.trim() : '';
-  const card = data[phaseId].find(c => c.id === cardId);
-  if (!card) return;
-  if (!card.media) card.media = [];
-  const mediaObj = { url, note };
-  card.media.push(mediaObj);
-  urlInput.value = '';
-  if (noteInput) noteInput.value = '';
-  // Re-render media list
-  const list = document.getElementById('ml-' + cardId);
-  const i = card.media.length - 1;
-  const div = document.createElement('div');
-  div.className = 'media-item';
-  div.style.cssText = 'flex-direction:column;align-items:stretch;gap:5px';
-  const prevHtml = buildMediaPreview(url, phaseId, cardId, i);
-  div.innerHTML = `
-    ${prevHtml}
-    <div style="display:flex;align-items:center;gap:8px">
-      <span class="media-item-icon">${getMediaIcon(url)}</span>
-      <div class="media-item-inner">
-        <a class="media-item-link" href="${url}" target="_blank">${shortUrl(url)}</a>
-      </div>
-      <span class="media-item-del" onclick="removeMedia('${phaseId}','${cardId}',${i})">✕</span>
-    </div>
-    <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${cardId}',${i},this.value)">${note}</textarea>
-  `;
-  list.appendChild(div);
-  showToast('تم إضافة اللينك ✓');
-  writePhase(phaseId);
-}
-
-function removeMedia(phaseId, cardId, idx) {
-  const card = data[phaseId].find(c => c.id === cardId);
-  if (!card) return;
-  card.media.splice(idx, 1);
-  const list = document.getElementById('ml-' + cardId);
-  list.innerHTML = card.media.map((m, i) => {
-    const url = typeof m === 'object' ? m.url : m;
-    const note = typeof m === 'object' ? (m.note||'') : '';
-    const prev = buildMediaPreview(url, phaseId, cardId, i);
-    return `
-    <div class="media-item" style="flex-direction:column;align-items:stretch;gap:5px">
-      ${prev}
-      <div style="display:flex;align-items:center;gap:8px">
-        <span class="media-item-icon">${getMediaIcon(url)}</span>
-        <div class="media-item-inner">
-          <a class="media-item-link" href="${url}" target="_blank">${shortUrl(url)}</a>
-        </div>
-        <span class="media-item-del" onclick="removeMedia('${phaseId}','${cardId}',${i})">✕</span>
-      </div>
-      <textarea class="media-item-note" placeholder="اكتب وصف للرابط أو الفيديو..." oninput="updateMediaNote('${phaseId}','${cardId}',${i},this.value)">${note}</textarea>
-    </div>`;
-  }).join('');
-  writePhase(phaseId);
-}
-
-function updateMediaNote(phaseId, cardId, idx, val) {
-  const card = (data[phaseId]||[]).find(c => c.id === cardId);
-  if (!card || !card.media[idx]) return;
-  if (typeof card.media[idx] === 'string') {
-    card.media[idx] = { url: card.media[idx], note: val };
-  } else {
-    card.media[idx].note = val;
-  }
-  // debounce save
-  clearTimeout(card._noteTimer);
-  card._noteTimer = setTimeout(() => writePhase(phaseId), 1500);
-}
-
-
-
-
-
-function autoResize(el) {
-  el.style.height = 'auto';
-  el.style.height = el.scrollHeight + 'px';
-}
-
-// ─── ADD MODAL ───────────────────────────────────────────────────────────
-function openAddModal(phaseId, layer) {
-  if (phaseId) document.getElementById('add-phase').value = phaseId;
-  if (layer) document.getElementById('add-layer').value = layer;
-  document.getElementById('modal-add').classList.add('open');
-  document.getElementById('add-type').focus();
-}
-
-function closeModal(id) {
-  document.getElementById(id).classList.remove('open');
-}
-
-// ─── FIREBASE CONFIG ────────────────────────────────────────────────────
+// ─── FIREBASE ──────────────────────────────────────────────────────────
 const firebaseConfig = {
   apiKey: "AIzaSyDQ_D-W0iLO075-P7xjahmWJ3av-f-6mck",
   authDomain: "geely-watad-v1-ads-format.firebaseapp.com",
@@ -684,150 +430,35 @@ const firebaseConfig = {
   messagingSenderId: "783598053028",
   appId: "1:783598053028:web:geelywatad2026"
 };
-
-// ─── FIREBASE INIT ──────────────────────────────────────────────────────
-let db = null;
-let syncEnabled = false;
-let saveTimeout = null;
-
-function initFirebase() {
+const PATH = 'soueast_dammam_v3';
+let db = null, saveT = null;
+function setSync(s){ const el = document.getElementById('sync'); const m = {ok:['● synced','#7bd88f'], dirty:['● unsaved','#FFA726'], saving:['● saving…','#FFA726'], off:['● offline','#ff7b7b'], conn:['● connecting…','#aaa']}[s]; el.textContent = m[0]; el.style.color = m[1]; }
+function clean(){ const out = {}; Object.keys(data).forEach(k => out[k] = (data[k]||[]).map(it => ({...it, media:(it.media||[]).map(norm)}))); return out; }
+function saveAll(manual){
+  if (!db){ if (manual) toast('ما في اتصال بالحفظ'); return; }
+  setSync('saving');
+  db.ref(PATH).set(clean()).then(() => { setSync('ok'); if (manual) toast('تم الحفظ'); }).catch(() => setSync('off'));
+}
+function queueSave(){ setSync('dirty'); clearTimeout(saveT); saveT = setTimeout(saveAll, 1500); }
+function initFirebase(){
   try {
-    firebase.initializeApp(firebaseConfig);
-    db = firebase.database();
-    syncEnabled = true;
-    setStatus('connecting');
-
-    // Load once on start only — no realtime listener
-    db.ref('soueast_dammam_v2').once('value')
-      .then(snapshot => {
-        const val = snapshot.val();
-        if (val) {
-          Object.keys(val).forEach(k => { data[k] = val[k]; });
-          renderAll();
-          document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
-          const active = document.getElementById('panel-' + currentPhase);
-          if (active) active.classList.add('active');
-        }
-        setStatus('saved');
-      })
-      .catch(err => {
-        console.warn('Firebase error:', err);
-        setStatus('offline');
-      });
-
-  } catch(e) {
-    console.warn('Firebase init failed:', e);
-    syncEnabled = false;
-    setStatus('offline');
-  }
+    firebase.initializeApp(firebaseConfig); db = firebase.database(); setSync('conn');
+    db.ref(PATH).once('value').then(snap => {
+      const v = snap.val();
+      if (v){ PHASES.forEach(p => { data[p.id] = Array.isArray(v[p.id]) ? v[p.id] : (v[p.id] ? Object.values(v[p.id]) : []); }); fixCur(); renderAll(); }
+      setSync('ok');
+    }).catch(() => setSync('off'));
+  } catch(e){ setSync('off'); }
+}
+function fixCur(){
+  const h = location.hash.slice(1).split('-'); const ph = h[0], id = h.slice(1).join('-');
+  if (ph && items(ph).some(x => x.id === id)) { cur = {ph, id, ref:0}; return; }
+  if (!curItem()){ const f = flat()[0]; cur = f ? {ph:f.ph, id:f.it.id, ref:0} : {ph:'1', id:null, ref:0}; }
 }
 
-// Write a single phase directly — no listener will fire
-function writePhase(phaseId) {
-  if (!syncEnabled || !db) return;
-  setStatus('saving');
-  const phaseData = data[phaseId] || [];
-  db.ref('soueast_dammam_v2/' + phaseId).set(phaseData)
-    .then(() => { setStatus('saved'); })
-    .catch(e => { setStatus('offline'); showToast('خطأ في الحفظ'); });
-}
-
-// Save all phases
-function saveData() {
-  if (!syncEnabled || !db) return;
-  setStatus('saving');
-  db.ref('soueast_dammam_v2').set(data)
-    .then(() => { setStatus('saved'); showToast('تم الحفظ ✓'); })
-    .catch(e => { setStatus('offline'); });
-}
-
-// Auto-save text edits with debounce
-function autoSave() {
-  clearTimeout(saveTimeout);
-  setStatus('unsaved');
-  saveTimeout = setTimeout(() => saveData(), 2000);
-}
-
-function updateCard(phaseId, cardId, field, val) {
-  const card = (data[phaseId] || []).find(c => c.id === cardId);
-  if (card) card[field] = val;
-  autoSave();
-}
-
-// ─── ADD CARD ────────────────────────────────────────────────────────────
-function addCard() {
-  const phaseId = document.getElementById('add-phase').value;
-  const platform = document.getElementById('add-platform').value;
-  const layer = document.getElementById('add-layer').value;
-  const type = document.getElementById('add-type').value.trim();
-  const desc = document.getElementById('add-desc').value.trim();
-  const tag = document.getElementById('add-tag').value.trim();
-  const media = document.getElementById('add-media').value.trim();
-  if (!type) { document.getElementById('add-type').focus(); return; }
-  const card = { id: uid(), platform, layer, type, desc, tag, media: media ? [media] : [] };
-  if (!data[phaseId]) data[phaseId] = [];
-  data[phaseId].push(card);
-  closeModal('modal-add');
-  ['add-type','add-desc','add-tag','add-media'].forEach(id => document.getElementById(id).value = '');
-  if (phaseId === currentPhase) {
-    const panel = document.getElementById('panel-' + currentPhase);
-    if (panel) panel.innerHTML = buildPanel(currentPhase);
-  }
-  showToast('تمت الإضافة ✓');
-  writePhase(phaseId);
-}
-
-// ─── DELETE CARD ─────────────────────────────────────────────────────────
-function deleteCard(phaseId, cardId) {
-  if (!confirm('تحذف هذا المحتوى؟')) return;
-  data[phaseId] = (data[phaseId] || []).filter(c => c.id !== cardId);
-  const el = document.getElementById('card-' + cardId);
-  if (el) el.remove();
-  showToast('تم الحذف ✓');
-  writePhase(phaseId);
-}
-
-function setStatus(s) {
-  const el = document.getElementById('save-status');
-  const states = {
-    saved:      { text: '● synced', color: 'var(--green)' },
-    unsaved:    { text: '● unsaved', color: 'var(--amber)' },
-    saving:     { text: '● saving...', color: 'var(--amber)' },
-    connecting: { text: '● connecting...', color: 'var(--text2)' },
-    offline:    { text: '● offline', color: 'var(--red)' },
-  };
-  const st = states[s] || states.offline;
-  el.textContent = st.text;
-  el.style.color = st.color;
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-document.getElementById('modal-add').addEventListener('click', function(e) {
-  if (e.target === this) closeModal('modal-add');
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
-  }
-});
-
-// ─── INIT ────────────────────────────────────────────────────────────────
-renderAll();
-setStatus('connecting');
-initFirebase();
+// ─── INIT ──────────────────────────────────────────────────────────────
+fixCur(); renderAll();
+if (window.firebase) initFirebase(); else setSync('off');
 </script>
-
-
-  <footer class="site-footer">
-    <span class="f-note">Prepared by Watad Agency for SOUEAST Saudi Arabia · 2026 · Confidential</span>
-    <span class="brand-wordmark" style="font-size:13px">SOUEAST</span>
-  </footer>
 </body>
 </html>
